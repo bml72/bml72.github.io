@@ -1,0 +1,599 @@
+/* ========================= Basic Formatting ========================= */
+
+html {
+    height: 100%;
+} /* Make sure the website covers 100% of the page */
+
+* {
+    margin: 0 auto 0 auto;
+} /* Left and right margins set to auto to format content and background accordingly. */
+
+body {
+    background-image: url(https://pixy.org/src/234/thumbs350/2348590.jpg);
+    width: 900px;
+} /* Background image is of a seamless globe jpg found online. Width is set to 900px to set up content section. */
+
+a {
+    text-decoration: none;
+    color: #015fa5;
+} /* The color of hyperlinks is a light blue, and any underlining is dismissed from display */
+
+a:hover {
+    color: #060e7e;
+} /* The color of hyperlinks when the cursor hovers over it is edited */
+
+/* ==================== Blank Div and Sidebar Button Section ==================== */
+
+#blank {
+    background-color: #ffdfba;
+    width: 780px;
+    height: 20px;
+    border-top-style: solid;
+    border-left-style: solid;
+    float: left;
+} /* The blank div, whose background color is the same as the header section, is 
+floated left to accomodate the sidebar button and make it look pretty. */
+
+#sidebar_button {
+    float: left;
+    border-top-style: solid;
+    border-right-style: solid;
+} /* The sidebar button and blank div are both floated left; this causes them to appear 
+side-by-side, barring enough space in the body width to fit. A border is set up in each
+header to separate the content sections from the background image. */
+
+.sidebar {
+    background-color: #1f1e1b;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    transition: 0.5s;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+} /* The settings for the sidebar are made. The top and left are set to 0 so that the 
+sidebar will appear on the left side of the webpage with no spacing between the top of
+the webpage. The padding is set to format the text, and the position is set to fixed 
+so that the sidebar doesn't disappear when scrolling. The z-index is set to 1 so that 
+the sidebar appears, and overflow-x is set to hidden to hide text in the sidebar when
+it's not selected. */
+
+.sidebar a{
+    color: #ffffba;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 8px 8px 8px 32px;
+    display: block;
+} /* The settings of the sidebar content are set. */
+
+.sidebar a:hover {
+    color: 	#ffdd4f;
+}
+
+.open_nav_button {
+    background-color: #1f1e1b;
+    color: white;
+    border: none;
+    cursor: pointer;
+} /* The button settings are set. */
+
+.open_nav_button:hover {
+    background-color: #000;
+}
+
+/* ===================================== Header Section ==================================== */
+
+#header {
+    background-color: #ffdfba;
+    height: 150px;
+    padding: 0px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    font-family: 'Tahmoa', sans-serif;
+    font-size: 0.90em;
+} /* The header settings are set. The only basic changes that are made in successive sections 
+is the font family and height. These change the type of font and length of the section whitespace,
+respectively. */
+
+/* ==================================== Introduction Section  ==================================== */
+
+#introduction {
+    background-color: white;
+    height: 800px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+p {
+    padding: 10px 0 10px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#country_list_one {
+    width: 200px;
+    float: left;
+    padding-left: 200px;
+} /* The settings for the unordered lists containing the countries are set. */
+
+#country_list_two {
+    width: 200px;
+    float: left;
+}
+
+/* =================================== Gross Domestic Product Section ====================================== */
+
+#gdp {
+    background-color: white;
+    height: 825px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+/* ==================================== Expenditure Section ===================================== */
+
+#expenditure {
+    background-color: white;
+    height: 2375px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+/* ========== Button Styling ========== */
+
+.drop_button {
+    padding: 2px 2px 2px 2px;
+    border: 1px solid black;
+    font-size: 12px;
+} /* The dropdown button is styled accordingly. */
+
+.dropdown_button {
+    padding-top: 5px;
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+} /* The padding and positioning of the dropdown button is styled
+to sit relative to the graphics and text. */
+
+.dropdown_button_content {
+    position: absolute;
+    display: none;
+    z-index: 1;
+} /* The dropdown button's content is hidden until clicked. */
+
+.dropdown_button:hover .dropdown_button_content {
+    display: block;
+}
+
+.dropdown_button:hover .drop_button {
+    background-color: #c9c9ff;
+}
+
+.container{
+    position: relative;
+    z-index: 0;
+} /* This pattern is repeated multiple times in this document. In cases
+where I want to show multiple graphs through a dropdown button method, I've
+jury-rigged a scenario in which all divs containing the relevant graphics 
+are set in the same position on top of each other. The first div (i.e. the 
+first year of data) is set to a z-index of 1, meaning it's the div on top of
+the stack; all other div's z-indices are defaulted to 0. When the button for 
+the corresponding div is clicked, the z-index of that graphic is changed to 1,
+while the divs for all other graphics are set to 0. This effectively shuffles the
+old div below the desired one, like a deck of cards. I am very proud of this. */
+
+#spending_analysis {
+    padding-top: 515px;
+}
+
+/* ========== Military Styling ========== */
+
+#military_button:hover {
+    background-color: #c9c9ff;
+}
+
+.military_2013 {
+    position: absolute;
+    z-index: 1;
+} /* Again, this z-index is set to 1 and all other years to 0. When a button for the 
+any of the other years is clicked, it changes that z-index to 1 and this and all other 
+years' z-indices to 0. */
+
+.military_2014 {
+    position: absolute;
+    z-index: 0;
+}
+
+.military_2015 {
+    position: absolute;
+    z-index: 0;
+}
+
+.military_2016 {
+    position: absolute;
+    z-index: 0;
+}
+
+.military_2017 {
+    position: absolute;
+    z-index: 0;
+}
+
+/* ========== Healthcare Styling ========== */
+
+#healthcare_button:hover {
+    background-color: #c9c9ff;
+}
+
+.healthcare_2013 {
+    position: absolute;
+    z-index: 1;
+}
+
+.healthcare_2014 {
+    position: absolute;
+    z-index: 0;
+}
+
+.healthcare_2015 {
+    position: absolute;
+    z-index: 0;
+}
+
+.healthcare_2016 {
+    position: absolute;
+    z-index: 0;
+}
+
+.healthcare_2017 {
+    position: absolute;
+    z-index: 0;
+}
+
+/* ========== Education Styling ========== */
+
+#education_button:hover {
+    background-color: #c9c9ff;
+}
+
+.education_2013 {
+    position: absolute;
+    z-index: 1;
+}
+
+.education_2014 {
+    position: absolute;
+    z-index: 0;
+}
+
+.education_2015 {
+    position: absolute;
+    z-index: 0;
+}
+
+.education_2016 {
+    position: absolute;
+    z-index: 0;
+}
+
+.education_2017 {
+    position: absolute;
+    z-index: 0;
+}
+
+/* =================================== Comparison Section ====================================== */
+
+#comparisons {
+    background-color: white;
+    height: 1850px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+#spending_comparison_analysis {
+    padding-top: 550px;
+}
+
+/* ========== Comparison GDP/Spending Styling ========== */
+
+#gdp_military_spending_comparison_button {
+    padding-left: 2px;
+    padding-right: 29px;
+} /* In this case, because the buttons have differently-lengthed
+text, I want to align the padding so that the formatting looks nicer. */
+
+#gdp_military_spending_comparison_button:hover {
+    background-color: #c9c9ff;
+} /* Because I want to change the padding, I must also remake the rule for 
+background color changes upon hovering over the button. */
+
+#gdp_healthcare_spending_comparison_button {
+    padding-left: 2px;
+}
+
+#gdp_healthcare_spending_comparison_button:hover {
+    background-color: #c9c9ff;
+}
+#gdp_education_spending_comparison_button {
+    padding-left: 2px;
+    padding-right: 12px;
+}
+
+#gdp_education_spending_comparison_button:hover {
+    background-color: #c9c9ff;
+}
+
+.military_spending_comparison {
+    position: absolute;
+    z-index: 1;
+}
+
+.healthcare_spending_comparison {
+    position: absolute;
+    z-index: 0;
+}
+
+.education_spending_comparison {
+    position: absolute;
+    z-index: 0;
+}
+
+/* ========== Comparison Spending Styling ========== */
+
+#spending_comparison_button:hover {
+    background-color: #c9c9ff;
+}
+
+.spending_2013 {
+    position: absolute;
+    z-index: 1;
+}
+
+.spending_2014 {
+    position: absolute;
+    z-index: 0;
+}
+
+.spending_2015 {
+    position: absolute;
+    z-index: 0;
+}
+
+.spending_2016 {
+    position: absolute;
+    z-index: 0;
+}
+
+.spending_2017 {
+    position: absolute;
+    z-index: 0;
+}
+
+/* =================================== Population Section ====================================== */
+
+#population {
+    background-color: white;
+    height: 900px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+#population_button:hover {
+    background-color: #c9c9ff;
+}
+
+.population_2013 {
+    position: absolute;
+    z-index: 1;
+}
+
+.population_2014 {
+    position: absolute;
+    z-index: 0;
+}
+
+.population_2015 {
+    position: absolute;
+    z-index: 0;
+}
+
+.population_2016 {
+    position: absolute;
+    z-index: 0;
+}
+
+.population_2017 {
+    position: absolute;
+    z-index: 0;
+}
+
+/* ===================================== Per Capita GDP Section ==================================== */
+
+#per_capita_gdp {
+    background-color: white;
+    height: 1000px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+/* ==================================== Per Capita Expenditures Section ===================================== */
+
+#per_capita_expenditure {
+    background-color: white;
+    height: 1000px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+#per_capita_military_button {
+    padding-left: 2px;
+    padding-right: 25px;
+}
+
+#per_capita_military_button:hover {
+    background-color: #c9c9ff;
+}
+
+#per_capita_healthcare_button {
+    padding-left: 2px;
+    padding-right: 3px;
+}
+
+#per_capita_healthcare_button:hover {
+    background-color: #c9c9ff;
+}
+
+#per_capita_education_button {
+    padding-left: 2px;
+    padding-right: 8px;
+}
+
+#per_capita_education_button:hover {
+    background-color: #c9c9ff;
+}
+
+.per_capita_military {
+    position: absolute;
+    z-index: 1;
+}
+
+.per_capita_healthcare {
+    position: absolute;
+    z-index: 0;
+}
+
+.per_capita_education {
+    position: absolute;
+    z-index: 0;
+}
+
+#expenditure_line_chart_spending_analysis {
+    padding-top: 615px;
+}
+
+/* ==================================== Per Capita Comparison Section ===================================== */
+
+#per_capita_comparisons {
+    background-color: white;
+    height: 1000px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+.per_capita_military_comparison {
+    position: absolute;
+    z-index: 1;
+}
+
+.per_capita_healthcare_comparison {
+    position: absolute;
+    z-index: 0;
+}
+
+.per_capita_education_comparison {
+    position: absolute;
+    z-index: 0;
+}
+
+/* ==================================== Fastest Growing Countries Section ===================================== */
+
+#fastest_growing_countries {
+    background-color: white;
+    height: 1150px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+/* ========== Average Growth Styling ========== */
+
+#healthcare_average_fixed_value_button:hover {
+    background-color: #c9c9ff;
+}
+#healthcare_average_percentage_button:hover {
+    background-color: #c9c9ff;
+}
+
+#education_average_fixed_value_button:hover {
+    background-color: #c9c9ff;
+}
+
+#education_average_percentage_button:hover {
+    background-color: #c9c9ff;
+}
+
+.healthcare_average_fixed_value {
+    position: absolute;
+    z-index: 1;
+}
+
+.healthcare_average_percentage {
+    position: absolute;
+    z-index: 0;
+}
+
+.education_average_fixed_value {
+    position: absolute;
+    z-index: 0;
+}
+
+.education_average_percentage {
+    position: absolute;
+    z-index: 0;
+}
+
+/* =================================== Additional Comments Section ====================================== */
+
+#additional_comments {
+    background-color: white;
+    height: 950px;
+    padding: 15px 20px 0 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.90em;
+}
+
+/* ===================================== Footer Section ==================================== */
+
+#footer {
+    background-color: white;
+    color: #c1c1c1;
+    height: 25px;
+    padding: 15px 75px 0 175px;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Tahmoa', sans-serif;
+    font-size: 0.80em;
+}

@@ -88,7 +88,7 @@ it's not selected. */
 
 #header {
     background-color: #ffdfba;
-    height: 150px;
+    height: 175px;
     padding: 0px 20px 0 20px;
     border-left-style: solid;
     border-right-style: solid;
@@ -99,6 +99,9 @@ it's not selected. */
 is the font family and height. These change the type of font and length of the section whitespace,
 respectively. */
 
+#special_note {
+    font-style: italic;
+}
 /* ==================================== Introduction Section  ==================================== */
 
 #introduction {

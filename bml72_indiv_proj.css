@@ -9,7 +9,8 @@ html {
 } /* Left and right margins set to auto to format content and background accordingly. */
 
 body {
-    background-image: url(https://pixy.org/src/234/thumbs350/2348590.jpg);
+    /* background-image: url(https://pixy.org/src/234/thumbs350/2348590.jpg); */
+    background-image: url(https://previews.123rf.com/images/notkoo2008/notkoo20081505/notkoo2008150501705/39464426-classroom-globe-cartoon-seamless-pattern-background.jpg);
     width: 900px;
 } /* Background image is of a seamless globe jpg found online. Width is set to 900px to set up content section. */
 

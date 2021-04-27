@@ -1,0 +1,82 @@
+[
+    {
+        "country": "Hungary",
+        "total_cases": 760967.0,
+        "total_deaths": 26001.0,
+        "population": 9660350.0,
+        "proportionate_total_cases": 0.0787721977,
+        "proportionate_total_deaths": 0.0026915174
+    },
+    {
+        "country": "Czechia",
+        "total_cases": 1612832.0,
+        "total_deaths": 28787.0,
+        "population": 10708982.0,
+        "proportionate_total_cases": 0.1506055384,
+        "proportionate_total_deaths": 0.0026881173
+    },
+    {
+        "country": "San Marino",
+        "total_cases": 5045.0,
+        "total_deaths": 88.0,
+        "population": 33938.0,
+        "proportionate_total_cases": 0.1486534268,
+        "proportionate_total_deaths": 0.0025929636
+    },
+    {
+        "country": "Bosnia and Herzegovina",
+        "total_cases": 194371.0,
+        "total_deaths": 8164.0,
+        "population": 3280815.0,
+        "proportionate_total_cases": 0.0592447303,
+        "proportionate_total_deaths": 0.0024884061
+    },
+    {
+        "country": "Montenegro",
+        "total_cases": 96187.0,
+        "total_deaths": 1451.0,
+        "population": 628062.0,
+        "proportionate_total_cases": 0.1531488929,
+        "proportionate_total_deaths": 0.0023102815
+    },
+    {
+        "country": "Bulgaria",
+        "total_cases": 392913.0,
+        "total_deaths": 15618.0,
+        "population": 6948445.0,
+        "proportionate_total_cases": 0.0565468965,
+        "proportionate_total_deaths": 0.0022476971
+    },
+    {
+        "country": "North Macedonia",
+        "total_cases": 149221.0,
+        "total_deaths": 4595.0,
+        "population": 2083380.0,
+        "proportionate_total_cases": 0.0716244756,
+        "proportionate_total_deaths": 0.0022055506
+    },
+    {
+        "country": "Slovakia",
+        "total_cases": 378150.0,
+        "total_deaths": 11357.0,
+        "population": 5459643.0,
+        "proportionate_total_cases": 0.0692627705,
+        "proportionate_total_deaths": 0.0020801726
+    },
+    {
+        "country": "Belgium",
+        "total_cases": 964526.0,
+        "total_deaths": 23909.0,
+        "population": 11589616.0,
+        "proportionate_total_cases": 0.0832232923,
+        "proportionate_total_deaths": 0.0020629674
+    },
+    {
+        "country": "Slovenia",
+        "total_cases": 234811.0,
+        "total_deaths": 4187.0,
+        "population": 2078932.0,
+        "proportionate_total_cases": 0.1129478982,
+        "proportionate_total_deaths": 0.0020140149
+    }
+]

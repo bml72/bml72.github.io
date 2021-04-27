@@ -1,0 +1,82 @@
+[
+    {
+        "country": "Andorra",
+        "total_cases": 12942.0,
+        "total_deaths": 123.0,
+        "population": 77265.0,
+        "proportionate_total_cases": 0.167501456,
+        "proportionate_total_deaths": 0.0015919239
+    },
+    {
+        "country": "Montenegro",
+        "total_cases": 96187.0,
+        "total_deaths": 1451.0,
+        "population": 628062.0,
+        "proportionate_total_cases": 0.1531488929,
+        "proportionate_total_deaths": 0.0023102815
+    },
+    {
+        "country": "Czechia",
+        "total_cases": 1612832.0,
+        "total_deaths": 28787.0,
+        "population": 10708982.0,
+        "proportionate_total_cases": 0.1506055384,
+        "proportionate_total_deaths": 0.0026881173
+    },
+    {
+        "country": "San Marino",
+        "total_cases": 5045.0,
+        "total_deaths": 88.0,
+        "population": 33938.0,
+        "proportionate_total_cases": 0.1486534268,
+        "proportionate_total_deaths": 0.0025929636
+    },
+    {
+        "country": "Slovenia",
+        "total_cases": 234811.0,
+        "total_deaths": 4187.0,
+        "population": 2078932.0,
+        "proportionate_total_cases": 0.1129478982,
+        "proportionate_total_deaths": 0.0020140149
+    },
+    {
+        "country": "Luxembourg",
+        "total_cases": 65813.0,
+        "total_deaths": 790.0,
+        "population": 625976.0,
+        "proportionate_total_cases": 0.1051366187,
+        "proportionate_total_deaths": 0.0012620292
+    },
+    {
+        "country": "Serbia",
+        "total_cases": 673520.0,
+        "total_deaths": 6130.0,
+        "population": 6804596.0,
+        "proportionate_total_cases": 0.0989801599,
+        "proportionate_total_deaths": 0.0009008617
+    },
+    {
+        "country": "Bahrain",
+        "total_cases": 168201.0,
+        "total_deaths": 614.0,
+        "population": 1701583.0,
+        "proportionate_total_cases": 0.0988497182,
+        "proportionate_total_deaths": 0.0003608405
+    },
+    {
+        "country": "Israel",
+        "total_cases": 837807.0,
+        "total_deaths": 6346.0,
+        "population": 8655541.0,
+        "proportionate_total_cases": 0.0967942963,
+        "proportionate_total_deaths": 0.000733172
+    },
+    {
+        "country": "United States",
+        "total_cases": 31929351.0,
+        "total_deaths": 570345.0,
+        "population": 331002647.0,
+        "proportionate_total_cases": 0.0964625247,
+        "proportionate_total_deaths": 0.0017230829
+    }
+]

@@ -1,0 +1,211 @@
+[
+    {
+        "country": "Bhutan",
+        "population": 771612.0,
+        "total_vaccinations": "No data",
+        "people_fully_vaccinated": "No data",
+        "prop_daily_vaccinations": 0.0382163297
+    },
+    {
+        "country": "Falkland Islands",
+        "population": 3483.0,
+        "total_vaccinations": 4407.0,
+        "people_fully_vaccinated": 1775.0,
+        "prop_daily_vaccinations": 0.0219488261
+    },
+    {
+        "country": "Gibraltar",
+        "population": 33691.0,
+        "total_vaccinations": 67366.0,
+        "people_fully_vaccinated": 31454.0,
+        "prop_daily_vaccinations": 0.0202765107
+    },
+    {
+        "country": "Nauru",
+        "population": 10834.0,
+        "total_vaccinations": "No data",
+        "people_fully_vaccinated": "No data",
+        "prop_daily_vaccinations": 0.015506738
+    },
+    {
+        "country": "Curacao",
+        "population": 164100.0,
+        "total_vaccinations": 77687.0,
+        "people_fully_vaccinated": 15365.0,
+        "prop_daily_vaccinations": 0.0130296161
+    },
+    {
+        "country": "San Marino",
+        "population": 33938.0,
+        "total_vaccinations": 24262.0,
+        "people_fully_vaccinated": 8641.0,
+        "prop_daily_vaccinations": 0.0124224348
+    },
+    {
+        "country": "Seychelles",
+        "population": 98340.0,
+        "total_vaccinations": 116957.0,
+        "people_fully_vaccinated": 50524.0,
+        "prop_daily_vaccinations": 0.0117428521
+    },
+    {
+        "country": "Saint Helena",
+        "population": 6071.0,
+        "total_vaccinations": 4572.0,
+        "people_fully_vaccinated": 1009.0,
+        "prop_daily_vaccinations": 0.0114229097
+    },
+    {
+        "country": "Israel",
+        "population": 8655541.0,
+        "total_vaccinations": 10379693.0,
+        "people_fully_vaccinated": 5005417.0,
+        "prop_daily_vaccinations": 0.0096272582
+    },
+    {
+        "country": "United Arab Emirates",
+        "population": 9890400.0,
+        "total_vaccinations": "No data",
+        "people_fully_vaccinated": 3836521.0,
+        "prop_daily_vaccinations": 0.0084142985
+    },
+    {
+        "country": "Cayman Islands",
+        "population": 65720.0,
+        "total_vaccinations": 63774.0,
+        "people_fully_vaccinated": 28988.0,
+        "prop_daily_vaccinations": 0.008234624
+    },
+    {
+        "country": "Bermuda",
+        "population": 62273.0,
+        "total_vaccinations": 52337.0,
+        "people_fully_vaccinated": 22243.0,
+        "prop_daily_vaccinations": 0.0082314968
+    },
+    {
+        "country": "Turks and Caicos Islands",
+        "population": 38718.0,
+        "total_vaccinations": 24300.0,
+        "people_fully_vaccinated": 10000.0,
+        "prop_daily_vaccinations": 0.0080582675
+    },
+    {
+        "country": "Isle of Man",
+        "population": 85032.0,
+        "total_vaccinations": 67915.0,
+        "people_fully_vaccinated": 15508.0,
+        "prop_daily_vaccinations": 0.0080293301
+    },
+    {
+        "country": "Maldives",
+        "population": 540542.0,
+        "total_vaccinations": 349757.0,
+        "people_fully_vaccinated": 62586.0,
+        "prop_daily_vaccinations": 0.0077725784
+    },
+    {
+        "country": "Jersey",
+        "population": 101073.0,
+        "total_vaccinations": 77185.0,
+        "people_fully_vaccinated": 27772.0,
+        "prop_daily_vaccinations": 0.0075642474
+    },
+    {
+        "country": "Uruguay",
+        "population": 3473727.0,
+        "total_vaccinations": 1529024.0,
+        "people_fully_vaccinated": 428084.0,
+        "prop_daily_vaccinations": 0.007489802
+    },
+    {
+        "country": "Guernsey",
+        "population": 67052.0,
+        "total_vaccinations": 46587.0,
+        "people_fully_vaccinated": 13618.0,
+        "prop_daily_vaccinations": 0.0068188628
+    },
+    {
+        "country": "Malta",
+        "population": 441539.0,
+        "total_vaccinations": 295587.0,
+        "people_fully_vaccinated": 93727.0,
+        "prop_daily_vaccinations": 0.0064920057
+    },
+    {
+        "country": "Anguilla",
+        "population": 15002.0,
+        "total_vaccinations": "No data",
+        "people_fully_vaccinated": "No data",
+        "prop_daily_vaccinations": 0.0062364234
+    },
+    {
+        "country": "Chile",
+        "population": 19116209.0,
+        "total_vaccinations": 13722557.0,
+        "people_fully_vaccinated": 5873211.0,
+        "prop_daily_vaccinations": 0.0058517109
+    },
+    {
+        "country": "United Kingdom",
+        "population": 67886004.0,
+        "total_vaccinations": 44450252.0,
+        "people_fully_vaccinated": 11192601.0,
+        "prop_daily_vaccinations": 0.0057265878
+    },
+    {
+        "country": "Montserrat",
+        "population": 4999.0,
+        "total_vaccinations": 1751.0,
+        "people_fully_vaccinated": 467.0,
+        "prop_daily_vaccinations": 0.0056890166
+    },
+    {
+        "country": "Monaco",
+        "population": 39244.0,
+        "total_vaccinations": 22953.0,
+        "people_fully_vaccinated": 10859.0,
+        "prop_daily_vaccinations": 0.0054141327
+    },
+    {
+        "country": "Bahrain",
+        "population": 1701583.0,
+        "total_vaccinations": 1149633.0,
+        "people_fully_vaccinated": 507061.0,
+        "prop_daily_vaccinations": 0.0052840198
+    },
+    {
+        "country": "United States",
+        "population": 331002647.0,
+        "total_vaccinations": 218947643.0,
+        "people_fully_vaccinated": 89245776.0,
+        "prop_daily_vaccinations": 0.005139964
+    },
+    {
+        "country": "Antigua and Barbuda",
+        "population": 97928.0,
+        "total_vaccinations": "No data",
+        "people_fully_vaccinated": "No data",
+        "prop_daily_vaccinations": 0.0050547341
+    },
+    {
+        "country": "Dominica",
+        "population": 71991.0,
+        "total_vaccinations": 18423.0,
+        "people_fully_vaccinated": 475.0,
+        "prop_daily_vaccinations": 0.0043614286
+    },
+    {
+        "country": "Serbia",
+        "population": 6804596.0,
+        "total_vaccinations": 3176769.0,
+        "people_fully_vaccinated": 1284370.0,
+        "prop_daily_vaccinations": 0.0043331819
+    },
+    {
+        "country": "Saint Kitts and Nevis",
+        "population": 53192.0,
+        "total_vaccinations": "No data",
+        "people_fully_vaccinated": "No data",
+        "prop_daily_vaccinations": 0.0042870683}
+]

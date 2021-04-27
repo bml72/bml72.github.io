@@ -1,0 +1,145 @@
+/* ///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//// BASIC WEBPAGE FORMATTING ////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////*/
+
+/* Set the height of the webpage to 100% of the screen height. */
+html {
+    height: 100%;
+}
+
+/* Set the margins to 0 on the top and bottom and whatever the difference 
+of the width of the screen size and the body section is. "!important" is 
+used to override the settings made in "bootstrap.min.css". */
+* {
+    margin: 0 auto 0 auto !important;
+}
+
+/* Set the width of the body so it only takes up a defined part of the 
+screen. Set the background image to be a nice picture I found online. */
+body {
+    width: 1000px;
+    background-image: url('https://image.freepik.com/free-vector/futuristic-coronavirus-covid-19-seamless-pattern-with-virus-cells-dark-blue-background_67515-968.jpg');
+}
+
+/* ///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//// NAVIGATION BAR FORMATTING ///////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////*/
+
+/* Set the borders and font specifications for the makeshift navigation 
+bar at the top of the webpage. */
+#header {
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Garamond', sans-serif;
+    font-size: 1.20em;
+}
+
+/* Set the specifications for navigation bar links to other webpages. */
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Float the list elements to the left so that they line up nicely. */
+.list {
+    float: left;
+}
+
+/* Set the padding of the GIF image in the leftmost corner of the 
+navigation bar so it lines up nicely. */
+#icon {
+    padding: 8px 16px;
+}
+
+/* Set the specifications for the title portion of the navigation bar. */
+#title {
+    padding: 14px 16px;
+    color: white;
+    text-align: center;
+}
+
+/* Set the specifications for the portion of the navigation bar that has 
+my name. */
+#name {
+    float: right;
+    padding: 14px 16px;
+    color: white;
+    text-align: center;
+}
+
+/* Set the specifications for list elements and links so that they look 
+nice. */
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none !important;
+}
+
+/* Set the color of links when hovered over. As mentioned earlier, 
+"!important" is used to set this specification with the highest priority 
+compared to other CSS files. */
+a:hover {
+    color: #FF748C !important;
+}
+
+/* Set the decoration of links to have no underlining. */
+#link {
+    text-decoration: none;
+}
+
+/* Set the color of links when hovered over. */
+#link:hover {
+    color: #FF748C;
+}
+
+/* Set some extra padding for headers. */
+h2 {
+    padding-top: 5px;
+}
+
+/* ///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//// MAIN WEBPAGE CONTENT FORMATTING /////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////*/
+
+/* Set the specifications for the main body of the webpage. This includes 
+padding, background, and font specifications. */
+#content {
+    padding: 10px 12px 0px 12px !important;
+    background-color: #D8D8D8;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Verdana', sans-serif;
+    font-size: 0.90em;
+    line-height: 1.5;
+}
+
+/* Aligning the div containing the columns of factors to the center of the 
+webpage. */
+#factors {
+    text-align: center;
+}
+
+/* Aligning the first column of factors so that it sits to the left of the 
+second column of factors. */
+#factors_one {
+    display: inline-block;
+    text-align: left;
+}
+
+/* Aligning the second column of factors so that it sits to the right of 
+the first column of factors. */
+#factors_two {
+    display: inline-block;
+    text-align: left;
+}

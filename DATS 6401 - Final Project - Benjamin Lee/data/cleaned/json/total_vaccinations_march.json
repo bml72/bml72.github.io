@@ -1,0 +1,2637 @@
+[
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-01",
+                "total_vaccinations": 8465403.0,
+                "people_fully_vaccinated": 1923197.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-01",
+                "total_vaccinations": 3509299.0,
+                "people_fully_vaccinated": 56712.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-01",
+                "total_vaccinations": 4675887.0,
+                "people_fully_vaccinated": 1639282.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-01",
+                "total_vaccinations": 6519802.0,
+                "people_fully_vaccinated": 2226493.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-01",
+                "total_vaccinations": 14854136.0,
+                "people_fully_vaccinated": 2597799.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-01",
+                "total_vaccinations": 2690163.0,
+                "people_fully_vaccinated": 998439.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-01",
+                "total_vaccinations": 1000000.0,
+                "people_fully_vaccinated": 1091497.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-01",
+                "total_vaccinations": 8774718.0,
+                "people_fully_vaccinated": 1799160.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-01",
+                "total_vaccinations": 21322717.0,
+                "people_fully_vaccinated": 844098.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-01",
+                "total_vaccinations": 76899987.0,
+                "people_fully_vaccinated": 25466405.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 1
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-02",
+                "total_vaccinations": 8841027.0,
+                "people_fully_vaccinated": 2034734.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-02",
+                "total_vaccinations": 3680653.0,
+                "people_fully_vaccinated": 69122.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-02",
+                "total_vaccinations": 4839444.0,
+                "people_fully_vaccinated": 1705966.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-02",
+                "total_vaccinations": 6739383.0,
+                "people_fully_vaccinated": 2280168.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-02",
+                "total_vaccinations": 15620749.0,
+                "people_fully_vaccinated": 2713978.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-02",
+                "total_vaccinations": 3023348.0,
+                "people_fully_vaccinated": 1055291.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-02",
+                "total_vaccinations": 5249831.0,
+                "people_fully_vaccinated": 1091497.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-02",
+                "total_vaccinations": 9073640.0,
+                "people_fully_vaccinated": 1949918.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-02",
+                "total_vaccinations": 21599027.0,
+                "people_fully_vaccinated": 895412.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-02",
+                "total_vaccinations": 78631601.0,
+                "people_fully_vaccinated": 26162122.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 2
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-03",
+                "total_vaccinations": 9277322.0,
+                "people_fully_vaccinated": 2163103.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-03",
+                "total_vaccinations": 3992452.0,
+                "people_fully_vaccinated": 223106.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-03",
+                "total_vaccinations": 5016763.0,
+                "people_fully_vaccinated": 1771246.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-03",
+                "total_vaccinations": 6982579.0,
+                "people_fully_vaccinated": 2349065.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-03",
+                "total_vaccinations": 16616048.0,
+                "people_fully_vaccinated": 2876927.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-03",
+                "total_vaccinations": 3386351.0,
+                "people_fully_vaccinated": 1100228.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-03",
+                "total_vaccinations": 5489342.0,
+                "people_fully_vaccinated": 1201919.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-03",
+                "total_vaccinations": 9317546.0,
+                "people_fully_vaccinated": 2077031.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-03",
+                "total_vaccinations": 21946433.0,
+                "people_fully_vaccinated": 963862.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-03",
+                "total_vaccinations": 80540474.0,
+                "people_fully_vaccinated": 26957804.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 3
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-04",
+                "total_vaccinations": 9739676.0,
+                "people_fully_vaccinated": 2321824.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-04",
+                "total_vaccinations": 4302866.0,
+                "people_fully_vaccinated": 388807.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-04",
+                "total_vaccinations": 5232095.0,
+                "people_fully_vaccinated": 1839826.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-04",
+                "total_vaccinations": 7225051.0,
+                "people_fully_vaccinated": 2411596.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-04",
+                "total_vaccinations": 18005503.0,
+                "people_fully_vaccinated": 3208668.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-04",
+                "total_vaccinations": 3386351.0,
+                "people_fully_vaccinated": 1100228.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-04",
+                "total_vaccinations": 6010744.0,
+                "people_fully_vaccinated": 1309569.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-04",
+                "total_vaccinations": 9560038.0,
+                "people_fully_vaccinated": 2206502.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-04",
+                "total_vaccinations": 22392883.0,
+                "people_fully_vaccinated": 1034068.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-04",
+                "total_vaccinations": 82572848.0,
+                "people_fully_vaccinated": 27795980.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 4
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-05",
+                "total_vaccinations": 10169160.0,
+                "people_fully_vaccinated": 2468014.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-05",
+                "total_vaccinations": 4600563.0,
+                "people_fully_vaccinated": 550290.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-05",
+                "total_vaccinations": 5484624.0,
+                "people_fully_vaccinated": 1902812.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-05",
+                "total_vaccinations": 7493659.0,
+                "people_fully_vaccinated": 2478916.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-05",
+                "total_vaccinations": 19497704.0,
+                "people_fully_vaccinated": 3501021.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-05",
+                "total_vaccinations": 3528152.0,
+                "people_fully_vaccinated": 1114537.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-05",
+                "total_vaccinations": 6301854.0,
+                "people_fully_vaccinated": 1393676.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-05",
+                "total_vaccinations": 9756289.0,
+                "people_fully_vaccinated": 2309952.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-05",
+                "total_vaccinations": 22887118.0,
+                "people_fully_vaccinated": 1090840.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-05",
+                "total_vaccinations": 85008094.0,
+                "people_fully_vaccinated": 28701201.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 5
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-06",
+                "total_vaccinations": 10169160.0,
+                "people_fully_vaccinated": 2468014.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-06",
+                "total_vaccinations": 4634328.0,
+                "people_fully_vaccinated": 574412.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-06",
+                "total_vaccinations": 5692974.0,
+                "people_fully_vaccinated": 1920395.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-06",
+                "total_vaccinations": 7695960.0,
+                "people_fully_vaccinated": 2528150.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-06",
+                "total_vaccinations": 20922344.0,
+                "people_fully_vaccinated": 3754041.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-06",
+                "total_vaccinations": 3528152.0,
+                "people_fully_vaccinated": 1114537.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-06",
+                "total_vaccinations": 6583873.0,
+                "people_fully_vaccinated": 1501746.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-06",
+                "total_vaccinations": 9883607.0,
+                "people_fully_vaccinated": 2373684.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-06",
+                "total_vaccinations": 23335514.0,
+                "people_fully_vaccinated": 1122402.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-06",
+                "total_vaccinations": 87912323.0,
+                "people_fully_vaccinated": 29776160.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 6
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-07",
+                "total_vaccinations": 10169160.0,
+                "people_fully_vaccinated": 2468014.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-07",
+                "total_vaccinations": 4642284.0,
+                "people_fully_vaccinated": 581303.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-07",
+                "total_vaccinations": 5807779.0,
+                "people_fully_vaccinated": 1925812.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-07",
+                "total_vaccinations": 7846599.0,
+                "people_fully_vaccinated": 2562841.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-07",
+                "total_vaccinations": 20989010.0,
+                "people_fully_vaccinated": 3761107.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-07",
+                "total_vaccinations": 4022544.0,
+                "people_fully_vaccinated": 1133787.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-07",
+                "total_vaccinations": 6655487.0,
+                "people_fully_vaccinated": 1527349.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-07",
+                "total_vaccinations": 9917348.0,
+                "people_fully_vaccinated": 2392405.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-07",
+                "total_vaccinations": 23519898.0,
+                "people_fully_vaccinated": 1142643.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-07",
+                "total_vaccinations": 90351750.0,
+                "people_fully_vaccinated": 30686881.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 7
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-08",
+                "total_vaccinations": 10169160.0,
+                "people_fully_vaccinated": 2468014.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-08",
+                "total_vaccinations": 4992754.0,
+                "people_fully_vaccinated": 795203.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-08",
+                "total_vaccinations": 5972593.0,
+                "people_fully_vaccinated": 1976264.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-08",
+                "total_vaccinations": 8085331.0,
+                "people_fully_vaccinated": 2615268.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-08",
+                "total_vaccinations": 23008733.0,
+                "people_fully_vaccinated": 4065450.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-08",
+                "total_vaccinations": 4022544.0,
+                "people_fully_vaccinated": 1133787.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-08",
+                "total_vaccinations": 6669466.0,
+                "people_fully_vaccinated": 1532861.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-08",
+                "total_vaccinations": 10001980.0,
+                "people_fully_vaccinated": 2436957.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-08",
+                "total_vaccinations": 23773959.0,
+                "people_fully_vaccinated": 1181431.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-08",
+                "total_vaccinations": 92089852.0,
+                "people_fully_vaccinated": 31493040.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 8
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-09",
+                "total_vaccinations": 10169160.0,
+                "people_fully_vaccinated": 2468014.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-09",
+                "total_vaccinations": 5369075.0,
+                "people_fully_vaccinated": 1032557.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-09",
+                "total_vaccinations": 6197209.0,
+                "people_fully_vaccinated": 2032791.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-09",
+                "total_vaccinations": 8335490.0,
+                "people_fully_vaccinated": 2670046.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-09",
+                "total_vaccinations": 24367906.0,
+                "people_fully_vaccinated": 4363679.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-09",
+                "total_vaccinations": 4022544.0,
+                "people_fully_vaccinated": 1133787.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-09",
+                "total_vaccinations": 6694349.0,
+                "people_fully_vaccinated": 1544760.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-09",
+                "total_vaccinations": 10222994.0,
+                "people_fully_vaccinated": 2546475.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-09",
+                "total_vaccinations": 24064182.0,
+                "people_fully_vaccinated": 1254353.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-09",
+                "total_vaccinations": 93692598.0,
+                "people_fully_vaccinated": 32102061.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 9
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-10",
+                "total_vaccinations": 10362487.0,
+                "people_fully_vaccinated": 2510956.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-10",
+                "total_vaccinations": 5770232.0,
+                "people_fully_vaccinated": 1297905.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-10",
+                "total_vaccinations": 6427037.0,
+                "people_fully_vaccinated": 2089694.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-10",
+                "total_vaccinations": 8618810.0,
+                "people_fully_vaccinated": 2735620.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-10",
+                "total_vaccinations": 25685011.0,
+                "people_fully_vaccinated": 4650530.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-10",
+                "total_vaccinations": 4837576.0,
+                "people_fully_vaccinated": 1262878.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-10",
+                "total_vaccinations": 7048129.0,
+                "people_fully_vaccinated": 1775478.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-10",
+                "total_vaccinations": 10360283.0,
+                "people_fully_vaccinated": 2614803.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-10",
+                "total_vaccinations": 24405231.0,
+                "people_fully_vaccinated": 1351515.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-10",
+                "total_vaccinations": 95721290.0,
+                "people_fully_vaccinated": 32904161.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 10
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-11",
+                "total_vaccinations": 10740859.0,
+                "people_fully_vaccinated": 2648615.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-11",
+                "total_vaccinations": 6187031.0,
+                "people_fully_vaccinated": 1543262.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-11",
+                "total_vaccinations": 6722229.0,
+                "people_fully_vaccinated": 2152380.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-11",
+                "total_vaccinations": 8900008.0,
+                "people_fully_vaccinated": 2796599.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-11",
+                "total_vaccinations": 26164920.0,
+                "people_fully_vaccinated": 4729079.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-11",
+                "total_vaccinations": 4991674.0,
+                "people_fully_vaccinated": 1295615.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-11",
+                "total_vaccinations": 7273933.0,
+                "people_fully_vaccinated": 1907924.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-11",
+                "total_vaccinations": 10502494.0,
+                "people_fully_vaccinated": 2694656.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-11",
+                "total_vaccinations": 24759603.0,
+                "people_fully_vaccinated": 1445078.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-11",
+                "total_vaccinations": 98203893.0,
+                "people_fully_vaccinated": 33863127.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 11
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-12",
+                "total_vaccinations": 11149530.0,
+                "people_fully_vaccinated": 2789164.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-12",
+                "total_vaccinations": 6561201.0,
+                "people_fully_vaccinated": 1766215.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-12",
+                "total_vaccinations": 7058746.0,
+                "people_fully_vaccinated": 2205468.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-12",
+                "total_vaccinations": 9221913.0,
+                "people_fully_vaccinated": 2868098.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-12",
+                "total_vaccinations": 28218457.0,
+                "people_fully_vaccinated": 5142953.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-12",
+                "total_vaccinations": 5108536.0,
+                "people_fully_vaccinated": 1339362.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-12",
+                "total_vaccinations": 7273933.0,
+                "people_fully_vaccinated": 1907924.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-12",
+                "total_vaccinations": 10742277.0,
+                "people_fully_vaccinated": 2883712.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-12",
+                "total_vaccinations": 25216857.0,
+                "people_fully_vaccinated": 1532754.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-12",
+                "total_vaccinations": 101128005.0,
+                "people_fully_vaccinated": 35000159.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 12
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-13",
+                "total_vaccinations": 11362190.0,
+                "people_fully_vaccinated": 2849230.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-13",
+                "total_vaccinations": 6611612.0,
+                "people_fully_vaccinated": 1792328.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-13",
+                "total_vaccinations": 7292852.0,
+                "people_fully_vaccinated": 2220608.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-13",
+                "total_vaccinations": 9468012.0,
+                "people_fully_vaccinated": 2917490.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-13",
+                "total_vaccinations": 29738409.0,
+                "people_fully_vaccinated": 5430774.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-13",
+                "total_vaccinations": 5440432.0,
+                "people_fully_vaccinated": 1454836.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-13",
+                "total_vaccinations": 7273933.0,
+                "people_fully_vaccinated": 1907924.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-13",
+                "total_vaccinations": 10923284.0,
+                "people_fully_vaccinated": 3035740.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-13",
+                "total_vaccinations": 25781120.0,
+                "people_fully_vaccinated": 1584909.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-13",
+                "total_vaccinations": 105703501.0,
+                "people_fully_vaccinated": 36929777.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 13
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-14",
+                "total_vaccinations": 11422666.0,
+                "people_fully_vaccinated": 2860819.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-14",
+                "total_vaccinations": 6618191.0,
+                "people_fully_vaccinated": 1796161.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-14",
+                "total_vaccinations": 7359596.0,
+                "people_fully_vaccinated": 2223980.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-14",
+                "total_vaccinations": 9639091.0,
+                "people_fully_vaccinated": 2953550.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-14",
+                "total_vaccinations": 29908038.0,
+                "people_fully_vaccinated": 5455653.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-14",
+                "total_vaccinations": 5480346.0,
+                "people_fully_vaccinated": 1460222.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-14",
+                "total_vaccinations": 7273933.0,
+                "people_fully_vaccinated": 1907924.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-14",
+                "total_vaccinations": 10992095.0,
+                "people_fully_vaccinated": 3099300.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-14",
+                "total_vaccinations": 26063501.0,
+                "people_fully_vaccinated": 1610280.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-14",
+                "total_vaccinations": 107060274.0,
+                "people_fully_vaccinated": 37459269.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 3
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-15",
+                "total_vaccinations": 11895560.0,
+                "people_fully_vaccinated": 2976204.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-15",
+                "total_vaccinations": 7048253.0,
+                "people_fully_vaccinated": 2068414.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-15",
+                "total_vaccinations": 7552120.0,
+                "people_fully_vaccinated": 2256385.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-15",
+                "total_vaccinations": 9887325.0,
+                "people_fully_vaccinated": 3012411.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-15",
+                "total_vaccinations": 32947432.0,
+                "people_fully_vaccinated": 5867948.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-15",
+                "total_vaccinations": 5739648.0,
+                "people_fully_vaccinated": 1572786.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-15",
+                "total_vaccinations": 7273933.0,
+                "people_fully_vaccinated": 1907924.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-15",
+                "total_vaccinations": 11261612.0,
+                "people_fully_vaccinated": 3349666.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-15",
+                "total_vaccinations": 26503552.0,
+                "people_fully_vaccinated": 1663646.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-15",
+                "total_vaccinations": 109081860.0,
+                "people_fully_vaccinated": 38335432.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 15
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-16",
+                "total_vaccinations": 11895560.0,
+                "people_fully_vaccinated": 2976204.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-16",
+                "total_vaccinations": 7458168.0,
+                "people_fully_vaccinated": 2311747.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-16",
+                "total_vaccinations": 7552120.0,
+                "people_fully_vaccinated": 2256385.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-16",
+                "total_vaccinations": 10067866.0,
+                "people_fully_vaccinated": 3079461.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-16",
+                "total_vaccinations": 35064536.0,
+                "people_fully_vaccinated": 6202499.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-16",
+                "total_vaccinations": 6185700.0,
+                "people_fully_vaccinated": 1716749.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-16",
+                "total_vaccinations": 7273933.0,
+                "people_fully_vaccinated": 1907924.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-16",
+                "total_vaccinations": 11696296.0,
+                "people_fully_vaccinated": 3747976.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-16",
+                "total_vaccinations": 27032671.0,
+                "people_fully_vaccinated": 1759445.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-16",
+                "total_vaccinations": 110737856.0,
+                "people_fully_vaccinated": 39042345.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 16
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-17",
+                "total_vaccinations": 12682290.0,
+                "people_fully_vaccinated": 3231102.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-17",
+                "total_vaccinations": 7825292.0,
+                "people_fully_vaccinated": 2527644.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-17",
+                "total_vaccinations": 7927771.0,
+                "people_fully_vaccinated": 2297100.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-17",
+                "total_vaccinations": 10273285.0,
+                "people_fully_vaccinated": 3158996.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-17",
+                "total_vaccinations": 37143255.0,
+                "people_fully_vaccinated": 6542468.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-17",
+                "total_vaccinations": 6581388.0,
+                "people_fully_vaccinated": 1876140.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-17",
+                "total_vaccinations": 7818009.0,
+                "people_fully_vaccinated": 2438650.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-17",
+                "total_vaccinations": 12142245.0,
+                "people_fully_vaccinated": 4165023.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-17",
+                "total_vaccinations": 27614526.0,
+                "people_fully_vaccinated": 1879054.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-17",
+                "total_vaccinations": 113037627.0,
+                "people_fully_vaccinated": 39989196.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 17
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-18",
+                "total_vaccinations": 13013331.0,
+                "people_fully_vaccinated": 3303805.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-18",
+                "total_vaccinations": 8160078.0,
+                "people_fully_vaccinated": 2713625.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-18",
+                "total_vaccinations": 7927771.0,
+                "people_fully_vaccinated": 2297100.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-18",
+                "total_vaccinations": 10468397.0,
+                "people_fully_vaccinated": 3234433.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-18",
+                "total_vaccinations": 39339817.0,
+                "people_fully_vaccinated": 6913587.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-18",
+                "total_vaccinations": 6787283.0,
+                "people_fully_vaccinated": 1948531.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-18",
+                "total_vaccinations": 7909438.0,
+                "people_fully_vaccinated": 2478390.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-18",
+                "total_vaccinations": 12431482.0,
+                "people_fully_vaccinated": 4439972.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-18",
+                "total_vaccinations": 28274802.0,
+                "people_fully_vaccinated": 2011070.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-18",
+                "total_vaccinations": 115730008.0,
+                "people_fully_vaccinated": 40981464.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 18
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-19",
+                "total_vaccinations": 13335728.0,
+                "people_fully_vaccinated": 3365497.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-19",
+                "total_vaccinations": 8454636.0,
+                "people_fully_vaccinated": 2868318.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-19",
+                "total_vaccinations": 7927771.0,
+                "people_fully_vaccinated": 2297100.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-19",
+                "total_vaccinations": 10711052.0,
+                "people_fully_vaccinated": 3317154.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-19",
+                "total_vaccinations": 42063392.0,
+                "people_fully_vaccinated": 7221362.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-19",
+                "total_vaccinations": 7346148.0,
+                "people_fully_vaccinated": 2221200.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-19",
+                "total_vaccinations": 8185944.0,
+                "people_fully_vaccinated": 2641167.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-19",
+                "total_vaccinations": 12844577.0,
+                "people_fully_vaccinated": 4836843.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-19",
+                "total_vaccinations": 29015457.0,
+                "people_fully_vaccinated": 2136795.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-19",
+                "total_vaccinations": 118313818.0,
+                "people_fully_vaccinated": 41934629.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 19
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-20",
+                "total_vaccinations": 13479165.0,
+                "people_fully_vaccinated": 3380095.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-20",
+                "total_vaccinations": 8488831.0,
+                "people_fully_vaccinated": 2879329.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-20",
+                "total_vaccinations": 8573551.0,
+                "people_fully_vaccinated": 2427389.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-20",
+                "total_vaccinations": 10930049.0,
+                "people_fully_vaccinated": 3371052.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-20",
+                "total_vaccinations": 44603841.0,
+                "people_fully_vaccinated": 7478654.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-20",
+                "total_vaccinations": 7835357.0,
+                "people_fully_vaccinated": 2301978.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-20",
+                "total_vaccinations": 8306498.0,
+                "people_fully_vaccinated": 2710605.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-20",
+                "total_vaccinations": 13029754.0,
+                "people_fully_vaccinated": 5013676.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-20",
+                "total_vaccinations": 29859742.0,
+                "people_fully_vaccinated": 2228772.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-20",
+                "total_vaccinations": 121441497.0,
+                "people_fully_vaccinated": 43036818.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 20
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-21",
+                "total_vaccinations": 13562176.0,
+                "people_fully_vaccinated": 3393203.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-21",
+                "total_vaccinations": 8492861.0,
+                "people_fully_vaccinated": 2880504.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-21",
+                "total_vaccinations": 8629076.0,
+                "people_fully_vaccinated": 2429958.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-21",
+                "total_vaccinations": 11095764.0,
+                "people_fully_vaccinated": 3409834.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-21",
+                "total_vaccinations": 45065998.0,
+                "people_fully_vaccinated": 7491696.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-21",
+                "total_vaccinations": 7879881.0,
+                "people_fully_vaccinated": 2312601.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-21",
+                "total_vaccinations": 8362575.0,
+                "people_fully_vaccinated": 2751436.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-21",
+                "total_vaccinations": 13057722.0,
+                "people_fully_vaccinated": 5040024.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-21",
+                "total_vaccinations": 30279360.0,
+                "people_fully_vaccinated": 2281384.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-21",
+                "total_vaccinations": 124481412.0,
+                "people_fully_vaccinated": 44141228.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 21
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-22",
+                "total_vaccinations": 14116560.0,
+                "people_fully_vaccinated": 3507089.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-22",
+                "total_vaccinations": 8761431.0,
+                "people_fully_vaccinated": 3002450.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-22",
+                "total_vaccinations": 8834678.0,
+                "people_fully_vaccinated": 2463973.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-22",
+                "total_vaccinations": 11361386.0,
+                "people_fully_vaccinated": 3486079.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-22",
+                "total_vaccinations": 48494594.0,
+                "people_fully_vaccinated": 7863441.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-22",
+                "total_vaccinations": 8226632.0,
+                "people_fully_vaccinated": 2494422.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-22",
+                "total_vaccinations": 8362575.0,
+                "people_fully_vaccinated": 2751436.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-22",
+                "total_vaccinations": 13265952.0,
+                "people_fully_vaccinated": 5220163.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-22",
+                "total_vaccinations": 30691557.0,
+                "people_fully_vaccinated": 2363684.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-22",
+                "total_vaccinations": 126509736.0,
+                "people_fully_vaccinated": 44910946.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 22
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-23",
+                "total_vaccinations": 15209201.0,
+                "people_fully_vaccinated": 3649714.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-23",
+                "total_vaccinations": 9002081.0,
+                "people_fully_vaccinated": 3092891.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-23",
+                "total_vaccinations": 9122922.0,
+                "people_fully_vaccinated": 2506023.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-23",
+                "total_vaccinations": 11659028.0,
+                "people_fully_vaccinated": 3569700.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-23",
+                "total_vaccinations": 50841286.0,
+                "people_fully_vaccinated": 8109334.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-23",
+                "total_vaccinations": 9330853.0,
+                "people_fully_vaccinated": 2941016.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-23",
+                "total_vaccinations": 8362575.0,
+                "people_fully_vaccinated": 2751436.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-23",
+                "total_vaccinations": 13589167.0,
+                "people_fully_vaccinated": 5497482.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-23",
+                "total_vaccinations": 31186362.0,
+                "people_fully_vaccinated": 2532839.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-23",
+                "total_vaccinations": 128217029.0,
+                "people_fully_vaccinated": 45533962.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 23
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-24",
+                "total_vaccinations": 15943964.0,
+                "people_fully_vaccinated": 3795195.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-24",
+                "total_vaccinations": 9221022.0,
+                "people_fully_vaccinated": 3157618.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-24",
+                "total_vaccinations": 9420514.0,
+                "people_fully_vaccinated": 2549521.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-24",
+                "total_vaccinations": 11991464.0,
+                "people_fully_vaccinated": 3657505.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-24",
+                "total_vaccinations": 53145709.0,
+                "people_fully_vaccinated": 8299171.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-24",
+                "total_vaccinations": 9330853.0,
+                "people_fully_vaccinated": 2941016.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-24",
+                "total_vaccinations": 8362575.0,
+                "people_fully_vaccinated": 2751436.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-24",
+                "total_vaccinations": 13969867.0,
+                "people_fully_vaccinated": 5836824.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-24",
+                "total_vaccinations": 31766669.0,
+                "people_fully_vaccinated": 2775481.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-24",
+                "total_vaccinations": 130473853.0,
+                "people_fully_vaccinated": 46365515.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 24
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-25",
+                "total_vaccinations": 16557071.0,
+                "people_fully_vaccinated": 3917526.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-25",
+                "total_vaccinations": 9433431.0,
+                "people_fully_vaccinated": 3212714.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-25",
+                "total_vaccinations": 9792674.0,
+                "people_fully_vaccinated": 2593879.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-25",
+                "total_vaccinations": 12326445.0,
+                "people_fully_vaccinated": 3737489.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-25",
+                "total_vaccinations": 55504440.0,
+                "people_fully_vaccinated": 8502968.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-25",
+                "total_vaccinations": 9745646.0,
+                "people_fully_vaccinated": 3015190.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-25",
+                "total_vaccinations": 8362575.0,
+                "people_fully_vaccinated": 2751436.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-25",
+                "total_vaccinations": 14227410.0,
+                "people_fully_vaccinated": 6064254.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-25",
+                "total_vaccinations": 32325993.0,
+                "people_fully_vaccinated": 3009863.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-25",
+                "total_vaccinations": 133305295.0,
+                "people_fully_vaccinated": 47419832.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 25
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-26",
+                "total_vaccinations": 17032868.0,
+                "people_fully_vaccinated": 3979754.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-26",
+                "total_vaccinations": 9650160.0,
+                "people_fully_vaccinated": 3263589.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-26",
+                "total_vaccinations": 10185810.0,
+                "people_fully_vaccinated": 2635356.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-26",
+                "total_vaccinations": 12698219.0,
+                "people_fully_vaccinated": 3826665.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-26",
+                "total_vaccinations": 58109773.0,
+                "people_fully_vaccinated": 8683155.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-26",
+                "total_vaccinations": 10412824.0,
+                "people_fully_vaccinated": 3233810.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-26",
+                "total_vaccinations": 8362575.0,
+                "people_fully_vaccinated": 2751436.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-26",
+                "total_vaccinations": 14491247.0,
+                "people_fully_vaccinated": 6295693.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-26",
+                "total_vaccinations": 33020952.0,
+                "people_fully_vaccinated": 3293517.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-26",
+                "total_vaccinations": 136684688.0,
+                "people_fully_vaccinated": 48695172.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 26
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-27",
+                "total_vaccinations": 17519083.0,
+                "people_fully_vaccinated": 4031876.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-27",
+                "total_vaccinations": 9665794.0,
+                "people_fully_vaccinated": 3266330.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-27",
+                "total_vaccinations": 10394243.0,
+                "people_fully_vaccinated": 2651777.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-27",
+                "total_vaccinations": 12982901.0,
+                "people_fully_vaccinated": 3889968.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-27",
+                "total_vaccinations": 60269782.0,
+                "people_fully_vaccinated": 8828346.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-27",
+                "total_vaccinations": 10425690.0,
+                "people_fully_vaccinated": 3235027.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-27",
+                "total_vaccinations": 8362575.0,
+                "people_fully_vaccinated": 2751436.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-27",
+                "total_vaccinations": 14652659.0,
+                "people_fully_vaccinated": 6435535.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-27",
+                "total_vaccinations": 33684114.0,
+                "people_fully_vaccinated": 3532378.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-27",
+                "total_vaccinations": 140180735.0,
+                "people_fully_vaccinated": 50141769.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 27
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-28",
+                "total_vaccinations": 17706983.0,
+                "people_fully_vaccinated": 4047577.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-28",
+                "total_vaccinations": 9667182.0,
+                "people_fully_vaccinated": 3266751.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-28",
+                "total_vaccinations": 10453534.0,
+                "people_fully_vaccinated": 2655443.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-28",
+                "total_vaccinations": 13178913.0,
+                "people_fully_vaccinated": 3942727.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-28",
+                "total_vaccinations": 60530435.0,
+                "people_fully_vaccinated": 8870201.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-28",
+                "total_vaccinations": 10766490.0,
+                "people_fully_vaccinated": 3330639.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-28",
+                "total_vaccinations": 8362575.0,
+                "people_fully_vaccinated": 2751436.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-28",
+                "total_vaccinations": 14652659.0,
+                "people_fully_vaccinated": 6435535.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-28",
+                "total_vaccinations": 34125256.0,
+                "people_fully_vaccinated": 3679972.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-28",
+                "total_vaccinations": 143462691.0,
+                "people_fully_vaccinated": 51593564.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 28
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-29",
+                "total_vaccinations": 18082153.0,
+                "people_fully_vaccinated": 4094124.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-29",
+                "total_vaccinations": 9933630.0,
+                "people_fully_vaccinated": 3382138.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-29",
+                "total_vaccinations": 10714250.0,
+                "people_fully_vaccinated": 2709292.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-29",
+                "total_vaccinations": 13486322.0,
+                "people_fully_vaccinated": 4031742.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-29",
+                "total_vaccinations": 61113354.0,
+                "people_fully_vaccinated": 8901956.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-29",
+                "total_vaccinations": 10766490.0,
+                "people_fully_vaccinated": 3330639.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-29",
+                "total_vaccinations": 11124350.0,
+                "people_fully_vaccinated": 4277686.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-29",
+                "total_vaccinations": 14949260.0,
+                "people_fully_vaccinated": 6578388.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-29",
+                "total_vaccinations": 34530295.0,
+                "people_fully_vaccinated": 3848202.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-29",
+                "total_vaccinations": 145812835.0,
+                "people_fully_vaccinated": 52614231.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 29
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-30",
+                "total_vaccinations": 18222559.0,
+                "people_fully_vaccinated": 4110050.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-30",
+                "total_vaccinations": 10211983.0,
+                "people_fully_vaccinated": 3526673.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-30",
+                "total_vaccinations": 10714250.0,
+                "people_fully_vaccinated": 2709292.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-30",
+                "total_vaccinations": 13811549.0,
+                "people_fully_vaccinated": 4124860.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-30",
+                "total_vaccinations": 63054353.0,
+                "people_fully_vaccinated": 9065318.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-30",
+                "total_vaccinations": 10766490.0,
+                "people_fully_vaccinated": 3330639.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-30",
+                "total_vaccinations": 11183108.0,
+                "people_fully_vaccinated": 4296849.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-30",
+                "total_vaccinations": 15301462.0,
+                "people_fully_vaccinated": 6687094.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-30",
+                "total_vaccinations": 35033894.0,
+                "people_fully_vaccinated": 4125884.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-30",
+                "total_vaccinations": 147602345.0,
+                "people_fully_vaccinated": 53423486.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 30
+    },
+    {
+        "countries": [
+            {
+                "country": "Brazil",
+                "continent": "americas",
+                "date": "2021-03-31",
+                "total_vaccinations": 19155981.0,
+                "people_fully_vaccinated": 4234605.0,
+                "population": 212559409.0
+            },
+            {
+                "country": "Chile",
+                "continent": "americas",
+                "date": "2021-03-31",
+                "total_vaccinations": 10491661.0,
+                "people_fully_vaccinated": 3679611.0,
+                "population": 19116209.0
+            },
+            {
+                "country": "France",
+                "continent": "europe",
+                "date": "2021-03-31",
+                "total_vaccinations": 11386807.0,
+                "people_fully_vaccinated": 2851057.0,
+                "population": 68147687.0
+            },
+            {
+                "country": "Germany",
+                "continent": "europe",
+                "date": "2021-03-31",
+                "total_vaccinations": 14150232.0,
+                "people_fully_vaccinated": 4227788.0,
+                "population": 83783945.0
+            },
+            {
+                "country": "India",
+                "continent": "asia",
+                "date": "2021-03-31",
+                "total_vaccinations": 65117896.0,
+                "people_fully_vaccinated": 9334695.0,
+                "population": 1380004385.0
+            },
+            {
+                "country": "Indonesia",
+                "continent": "asia",
+                "date": "2021-03-31",
+                "total_vaccinations": 11674871.0,
+                "people_fully_vaccinated": 3664708.0,
+                "population": 273523621.0
+            },
+            {
+                "country": "Russia",
+                "continent": "europe",
+                "date": "2021-03-31",
+                "total_vaccinations": 11373572.0,
+                "people_fully_vaccinated": 4369236.0,
+                "population": 145934460.0
+            },
+            {
+                "country": "Turkey",
+                "continent": "europe",
+                "date": "2021-03-31",
+                "total_vaccinations": 15834787.0,
+                "people_fully_vaccinated": 6840333.0,
+                "population": 84339067.0
+            },
+            {
+                "country": "United Kingdom",
+                "continent": "europe",
+                "date": "2021-03-31",
+                "total_vaccinations": 35660902.0,
+                "people_fully_vaccinated": 4513458.0,
+                "population": 67886004.0
+            },
+            {
+                "country": "United States",
+                "continent": "americas",
+                "date": "2021-03-31",
+                "total_vaccinations": 150273292.0,
+                "people_fully_vaccinated": 54607041.0,
+                "population": 331002647.0
+            }
+        ],
+        "date2": 31
+    }
+]

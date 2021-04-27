@@ -1,0 +1,461 @@
+/* ///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//// BASIC WEBPAGE FORMATTING ////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////*/
+
+/* Set the height of the webpage to 100% of the screen height. */
+html {
+    height: 100%;
+}
+
+/* Set the margins to 0 on the top and bottom and whatever the difference 
+of the width of the screen size and the body section is. "!important" is 
+used to override the settings made in "bootstrap.min.css". */
+* {
+    margin: 0 auto 0 auto !important;
+}
+
+/* Set the width of the body so it only takes up a defined part of the 
+screen. Set the background image to be a nice picture I found online. */
+body {
+    width: 1000px; 
+    background-image: url('https://image.freepik.com/free-vector/futuristic-coronavirus-covid-19-seamless-pattern-with-virus-cells-dark-blue-background_67515-968.jpg');
+}
+
+/* ///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//// NAVIGATION BAR FORMATTING ///////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////*/
+
+/* Set the borders and font specifications for the makeshift navigation 
+bar at the top of the webpage. */
+#header {
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Garamond', sans-serif;
+    font-size: 1.20em;
+}
+
+/* Set the specifications for navigation bar links to other webpages. */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Float the list elements to the left so that they line up nicely. */
+li {
+    float: left;
+}
+
+/* Set the padding of the GIF image in the leftmost corner of the 
+navigation bar so it lines up nicely. */
+#icon {
+    padding: 8px 16px;
+}
+
+/* Set the specifications for the title portion of the navigation bar. */
+#title {
+    padding: 14px 16px;
+    color: white;
+    text-align: center;
+}
+
+/* Set the specifications for the portion of the navigation bar that has 
+my name. */
+#name {
+    float: right;
+    padding: 14px 16px;
+    color: white;
+    text-align: center;
+}
+
+/* Set the specifications for list elements and links so that they look 
+nice. */
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none !important;
+}
+
+/* Set the color of links when hovered over. As mentioned earlier, 
+"!important" is used to set this specification with the highest priority 
+compared to other CSS files. */
+a:hover {
+    color: #FF748C !important;
+}
+
+/* Set some extra padding for headers. */
+h2 {
+    padding-top: 10px;
+}
+
+/* ///////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//// MAIN WEBPAGE CONTENT FORMATTING /////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////*/
+
+/* Set the specifications for the main body of the webpage. This includes 
+padding, background, and font specifications. */
+#content {
+    padding: 10px 12px 0px 12px !important;
+    background-color: #D8D8D8;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Verdana', sans-serif;
+    font-size: 0.90em;
+    line-height: 1.5;
+}
+
+/* Set the specifications for the main body of the webpage. This includes 
+padding, background, and font specifications. */
+#content_2 {
+    padding: 10px 12px 0px 12px !important;
+    background-color: #D8D8D8;
+    border-left-style: solid;
+    border-right-style: solid;
+    font-family: 'Verdana', sans-serif;
+    font-size: 0.90em;
+    line-height: 1.5;
+}
+
+/* Set the specifications for the main body of the webpage. This includes 
+padding, background, and font specifications. */
+#chart_container {
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+/* Set the decoration of links to have no underlining. */
+#link {
+    text-decoration: none;
+}
+
+/* Set the color of links when hovered over. */
+#link:hover {
+    color: #FF748C;
+}
+
+/* Set the specifications for the area containing the Gapminder-inspired SVG. */
+#gapminder_vaccination_timeline svg {
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+	background-color: #D8D8D8;
+}
+
+/* Set the specifications for the buttons related to the Gapminder-inspired SVG. */
+#reset-button, #play-button, #slider-div {
+	float: left;
+	margin-right:10px;
+}
+
+/* Set the specifications for the buttons related to the Gapminder-inspired SVG. */
+#slider-div {
+	width:300px;
+	margin-left: 10px;
+	padding-left: 20px;
+}
+
+/* Set the specifications for the buttons related to the Gapminder-inspired SVG. */
+#reset-button {
+	margin-top: 5px;
+	margin-bottom:10px;
+}
+
+/* Set the specifications for the buttons related to the Gapminder-inspired SVG. */
+#play-button {
+	margin-top: 5px;
+	margin-bottom:10px;
+	margin-right: 10px !important;
+}
+
+/* Set the specifications for the buttons related to the Gapminder-inspired SVG. */
+#continent-select {
+	width: 150px;
+	margin-top:5px;
+	margin-left: 340px !important;
+}
+
+/* Set the specifications for the div containing the custom SVG. */
+#chart_container {
+    text-align: center;
+    background-color: #D8D8D8;
+}
+
+/* Set the specifications for the dropdown button. */
+.drop_button {
+    padding: 2px 2px 2px 2px !important;
+    border: 1px solid black !important;
+    font-size: 12px !important;
+}
+
+/* Set the specifications for the dropdown button. */
+.dropdown_button {
+    padding-top: 5px !important;
+    position: relative !important;
+    display: inline-block !important;
+    overflow: visible !important;
+} 
+
+/* Set the specifications for the dropdown button content. */
+.dropdown_button_content {
+    position: absolute !important;
+    display: none !important;
+    z-index: 1 !important;
+}
+
+/* Set the specifications for the dropdown button content and what happens 
+when the dropdown button is hovered over. */
+.dropdown_button:hover .dropdown_button_content {
+    display: block !important;
+}
+
+/* Set the specifications for the background of the dropdown button when 
+hovered over. */
+.dropdown_button:hover .drop_button {
+    background-color: #FF748C !important;
+}
+
+/* Set the specifications for the gdp button. */
+#gdp_button {
+    white-space: nowrap;
+    padding: 2px 6px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the specifications for when the gdp button is hovered over. */
+#gdp_button:hover {
+    background-color: #FF748C;
+}
+
+/* Set the specifications for the age button. */
+#age_button {
+    white-space: nowrap;
+    padding: 2px 39px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the specifications for when the age button is hovered over. */
+#age_button:hover {
+    background-color: #FF748C;
+}
+
+/* Set the specifications for the life expectancy button. */
+#lifeexp_button {
+    white-space: nowrap;
+    padding: 2px 5px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the specifications for when the life expectancy button is hovered 
+over. */
+#lifeexp_button:hover {
+    background-color: #FF748C;
+}
+
+/* Set the specifications for the HDI button. */
+#hdi_button {
+    white-space: nowrap;
+    padding: 2px 76px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the specifications for when the HDI button is hovered over. */
+#hdi_button:hover {
+    background-color: #FF748C;
+}
+
+/* Set the specifications for the stringency index button. */
+#stringency_button {
+    white-space: nowrap;
+    padding: 2px 35px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the specifications for when the stringency index button is hovered 
+over. */
+#stringency_button:hover {
+    background-color: #FF748C;
+}
+
+/* Set the padding for the stepped area charts div to provide adequate 
+spacing for the section following it. */
+#stepped_area_charts {
+    padding-bottom: 510px;
+}
+
+/* Set the position of the container for div containing the stepped area
+charts divs. NOTE: This is a repeating style used throughout this file. 
+The basic concept is to set the z-index of the first div in the stack 
+(i.e. the first world map) to 1 so that it's shown. When a button for a 
+particular div is clicked, it will change the currently-shown div's 
+z-index to 0 and the desired div's z-index to 1. This is similar to 
+shuffling a card to the front of a stack. */
+.stepped_area_charts_container{
+    position: relative;
+    z-index: 0;
+} 
+
+/* Initializing the gdp div to be shown (i.e. z-index of 1). Position is 
+absolute so that it's centered according to the container it's inside 
+of. */
+.gdp {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Initializing the age div to be hidden (i.e. z-index 
+of 0). */
+.age {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Initializing the life expectancy div to be hidden (i.e. z-index 
+of 0). */
+.lifeexp {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Initializing the HDI div to be hidden (i.e. z-index 
+of 0). */
+.hdi {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Initializing the stringency index div to be hidden (i.e. z-index 
+of 0). */
+.stringency {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Set the padding for the bubble charts div to provide adequate 
+spacing for the section following it. */
+#bubble_chart {
+    padding-bottom: 510px;
+}
+
+/* Set the position of the container for div containing the bubble chart 
+divs. This follows the "card-shuffling" theme present in the world map div 
+above. */
+.bubble_chart_container{
+    position: relative;
+    z-index: 0;
+} 
+
+/* Set the specifications for the button that shows the proportionate gdp
+div. */
+#prop_gdp_button {
+    white-space: nowrap;
+    padding: 2px 8px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the background color when this button is hovered over. */
+#prop_gdp_button:hover {
+    background-color: #FF748C;
+}
+
+/* Set the specifications for the button that shows the proportionate age
+div. */
+#prop_age_button {
+    white-space: nowrap;
+    padding: 2px 40px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the background color when this button is hovered over. */
+#prop_age_button:hover {
+    background-color: #FF748C;
+}
+
+/* Set the specifications for the button that shows the proportionate life
+expectancy div. */
+#prop_lifeexp_button {
+    white-space: nowrap;
+    padding: 2px 6px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the background color when this button is hovered over. */
+#prop_lifeexp_button:hover {
+    background-color: #FF748C;
+}
+
+/* Set the specifications for the button that shows the proportionate HDI
+ div. */
+#prop_hdi_button {
+    white-space: nowrap;
+    padding: 2px 77px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the background color when this button is hovered over. */
+#prop_hdi_button:hover {
+    background-color: #FF748C;
+}
+
+/* Set the specifications for the button that shows the proportionate 
+stringency index div. */
+#prop_stringency_button {
+    white-space: nowrap;
+    padding: 2px 36px 2px 2px;
+    font-size: 12px;
+}
+
+/* Set the background color when this button is hovered over. */
+#prop_stringency_button:hover {
+    background-color: #FF748C;
+}
+
+/* Initializing the proportionate gdp div to be shown (i.e. z-index of 1). 
+Position is absolute so that it's centered according to the container 
+it's inside of. */
+.prop_gdp {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Initializing the proportionate age div to be hidden (i.e. z-index 
+of 0). */
+.prop_age {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Initializing the proportionate life expectancy div to be hidden (i.e. 
+z-index of 0). */
+.prop_lifeexp {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Initializing the proportionate gdp div to be hidden (i.e. z-index 
+of 0). */
+.prop_hdi {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Initializing the proportionate stringency index div to be hidden (i.e. 
+z-index of 0). */
+.prop_stringency {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Centering the vaccination progress div so that is lines up nicely. */
+#average_daily_vaccination_progress {
+    text-align: center;
+}

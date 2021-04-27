@@ -1,0 +1,62 @@
+[
+    {
+        "country": "United States",
+        "total_cases": 31929351.0,
+        "total_deaths": 570345.0,
+        "population": 331002647.0
+    },
+    {
+        "country": "Brazil",
+        "total_cases": 14167973.0,
+        "total_deaths": 383502.0,
+        "population": 212559409.0
+        },
+    {
+        "country": "Mexico",
+        "total_cases": 2319596.0,
+        "total_deaths": 214079.0,
+        "population": 128932753.0
+    },
+    {
+        "country": "India",
+        "total_cases": 16263695.0,
+        "total_deaths": 186920.0,
+        "population": 1380004385.0
+    },
+    {
+        "country": "United Kingdom",
+        "total_cases": 4413834.0,
+        "total_deaths": 127597.0,
+        "population": 67886004.0
+    },
+    {
+        "country": "Italy",
+        "total_cases": 3920945.0,
+        "total_deaths": 118357.0,
+        "population": 60461828.0
+    },
+    {
+        "country": "Russia",
+        "total_cases": 4682573.0,
+        "total_deaths": 105328.0,
+        "population": 145934460.0
+    },
+    {
+        "country": "France",
+        "total_cases": 5469674.0,
+        "total_deaths": 102323.0,
+        "population": 68147687.0
+    },
+    {
+        "country": "Germany",
+        "total_cases": 3254609.0,
+        "total_deaths": 81203.0,
+        "population": 83783945.0
+    },
+    {
+        "country": "Spain",
+        "total_cases": 3456886.0,
+        "total_deaths": 77496.0,
+        "population": 46754783.0
+    }
+]

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Setting the character set to use UTF-8 encoding. -->
+    <meta charset='UTF-8'>
+
+    <!-- Setting the document mode to be X-UA compatible with Microsoft Edge. -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+    <!-- Setting the width of the webpage to render at the width of the screen it's displayed on. -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Home Page</title>
+
+    <!-- Referencing the associated CSS files for all styling settings. -->
+    <link rel='stylesheet' href='css/home.css'>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- ///////////////////////////////// SOURCE CREDITS //////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////// Globe GIF: https://acegif.com/spinning-globe-gifs/ //////////////////////////////////////////
+        ////// Virus GIF: https://giphy.com/stickers/virus-coronavirus-covid-19-JpjsHmFkBjJtzcBvko /////////
+        ////// Vaccine GIF: https://giphy.com/stickers/cura-vacina-vacinacorona-JUvm3NtqtRhNe4BWxs /////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////// THANK YOU /////////////////////////////////////////////////////
+    -->
+</head>
+<body>
+    <!-- Creating a navigation bar that appears at the top of the webpage. -->
+    <div id='header'>
+        <ul class='navbar'>
+            <li class='list' id='icon'><img src='https://acegif.com/wp-content/gifs/globe-2.gif' width='30' height='30' alt=''></li>
+            <li class='list' id='title'>Final Project | Data Visualization</li>
+            <li class='list'><a href='home.html'>Home</a></li>
+            <li class='list'><a href='infections.html'>Infections</a></li>
+            <li class='list'><a href='vaccinations.html'>Vaccinations</a></li>
+            <li class='list' id='name'>Benjamin Lee</li>
+        </ul>
+    </div>
+    <div id='content'>
+        <h2>About This Website</h2>
+        <br>
+        <p>
+            This website goes over COVID-19 infection and vaccination data for all countries across the world. 
+            The purpose of this particular webpage is to provide an overview of the project and contains no 
+            visualizations. Please see the "Infections" and "Vaccinations" links in the navigation bar above 
+            for visualizations and analyses on the respective topics. 
+        </p>
+        <br>
+        <br>
+        <h2>Introduction</h2>
+        <br>
+        <p>
+            Since its inception in late 2019, COVID-19 has devastated the world with over 148 million cases and 
+            3 million deaths. However, the introduction of different vaccines in early 2021 has sparked hope for 
+            many. Vaccines developed by Pfizer, Moderna, BioNTech, Sputnik V, Oxford-AstraZeneca and Johnson & 
+            Johnson are being distributed in countries across the world. The return to pre-pandemic life may come 
+            sooner than expected.
+        </p>
+        <br>
+        <p>
+            This project attempts to apply visualizations to understand what demographic and health-related 
+            factors influence COVID-19 infection and vaccination rates, as well as which countries are on track 
+            to gain full population immunity the quickest. The following variables are considered in this project:
+        </p>
+        <br>
+        <br>
+        <!-- Creating divs that appear side-by-side and contain unordered lists associated with demographic and health-related factors. -->
+        <div id='factors'>
+            <div id='factors_one'>
+                <ul>
+                    <li>Country</li>
+                    <li>Date</li>
+                    <li>Total Cases</li>
+                    <li>Total Deaths</li>
+                    <li>Total Vaccinations</li>
+                    <li>Population</li>
+                    <li>Population Density</li>
+                    <li>Median Age</li>
+                    <li>Aged 65 or Older</li>
+                    <li>Aged 70 or Older</li>
+                </ul>
+            </div>
+            <div id='factors_two'>
+                <ul>
+                    <li>GDP per Capita</li>
+                    <li>Extreme Poverty</li>
+                    <li>Cardiovascular Death Rate</li>
+                    <li>Diabetes Prevalence</li>
+                    <li>Male Smokers</li>
+                    <li>Female Smokers</li>
+                    <li>Handwashing Facilities</li>
+                    <li>Hospital Beds per Thousand</li>
+                    <li>Life Expectancy</li>
+                    <li>Human Development Index</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <p>
+            A codebook containing explanations for all of the variables above can be found 
+            <a id='link' href='https://github.com/owid/covid-19-data/blob/master/public/data/owid-covid-codebook.csv' target='_blank'>here</a>.
+        </p>
+        <br>
+        <p>
+            Visualizations on infection data attempt to show which countries have suffered the most from COVID-19, 
+            and what factors may have led to their suffering. "Suffering" is defined by the number of total cases 
+            and deaths from COVID. Visualizations on vaccination data attempt to show which countries are on track 
+            to gain full population immunity first, and what factors may play a part in vaccination progress. 
+            Exploration into infections can be found on the <a id='link' href='infections.html'>infections</a> webpage, 
+            while exploration into vaccinations can be found on the <a id='link' href='vaccinations.html'>vaccinations</a>
+            webpage.
+        </p>
+        <br>
+        <br>
+        <h2>Pre-Processing</h2>
+        <br>
+        <p>
+            The infections data was downloaded from the Our World in Data <a id='link' href='https://ourworldindata.org/coronavirus-source-data' target='_blank'>website</a>, while the 
+            vaccination data was downloaded from <a id='link' href='https://www.kaggle.com/gpreda/covid-world-vaccination-progress' target='_blank'>Kaggle</a>.
+            The CSV files were pre-processed using Python (see <a id='link' href='py/preprocessing.py' taret='_blank'>preprocessing.py</a>). Below are 
+            some of the basic steps taken to clean the data.
+            <br>
+            <br>
+            <ul>
+                <li>All countries that appear on the infections dataset and not the vaccinations dataset (and vice versa) were removed. By analyzing data for a 
+                    country that doesn't exist on one of the two datasets, we can't gain full insight into how that country was affected by COVID-19.</li>
+                <br>
+                <li>All irrelevant columns were dropped from both datasets. Some of the irrelevant columns include 'new_cases_smoothed', 'new_deaths_smoothed', 
+                    and 'source_name'. The smoothed data was not particularly useful for the goals of this project, as were the source names from where the 
+                    vaccination data was found.</li>
+                <br>
+                <li>The 'date' column for both datasets was converted to a datetime variable. This conversion was useful when creating the visualization on the 
+                    vaccinations page that shows vaccination and case progression over time. </li>
+            </ul>
+        </p>
+        <br>
+        <br>
+        <h2>Overall Conclusions</h2>
+        <br>
+        <p>
+            Analysis of infections data concludes that on a raw scale, <strong>the United States has suffered the most from COVID-19</strong>. With over 31 million cases and 570,000 deaths, The US
+            has the highest numbers in these two categories in the world. Diabetes prevalence is perhaps the most measurable factor in assessing why US cases and deaths are so high;
+            over 10% of the population in the US aged 20 to 79 have diabetes, which puts victims at a higher risk of death from COVID. However, on scale that takes cases and deaths 
+            in proportion to population, Andorra has suffered the most cases-wise (16% of population), while Hungary suffered the most deaths-wise (0.269% of population). Andorra has 
+            a sufficiently high prevalence of diabetes and smokers, while Hungary has a high median age and diabetes prevalence.
+        </p>
+        <br>
+        <p>
+            Analysis of vaccination data concludes that <strong>Gibralter will likely gain full population immunity first</strong>. Despite Bhutan's larger percentage of population vaccinated per day (3.8% to 
+            Gibralter's 2.1%), Gibralter has already vaccinated 93% of their population to date. Although the US and India are vaccinating a huge number of people per day (1 million+), in 
+            proportion to their populations these values are miniscule. The most common factors associated with vaccination rates are GDP and human development index (HDI). High GDP and HDI 
+            values mean more money to afford doses of different vaccines. As was the case with infections data, smaller countries are typically filling the top-ten lists. This is more or less 
+            expected, since smaller countries that do not have appropriate resources will typically be unequipped to deal with outbreaks of disease. However, some smaller countries are in a 
+            much wealthier stance and can afford to take care of themselves.
+        </p>
+        <br>
+        <p>
+            However, perhaps the most important conclusion of this project is that certain factors cannot be measured. The outbreak of COVID-19 started in China, and yet China, with a population of 
+            over a billion boasts a mere 100,000 cases and 4,000 deaths? I find this extremely hard to believe, despite their proportionately high average stringency index (~60.00). There have also 
+            been reports of hospitals in the US gaining some sort of incentive for reporting COVID-19 cases; this could heavily skew case numbers as well. Combining untrustworthy reporting with the 
+            prevalence of anti-maskers and conspiracy theorists can result in statistics that are hard to believe.
+        </p>
+        <br>
+    </div>
+</body>
+</html>

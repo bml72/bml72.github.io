@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Setting the character set to use UTF-8 encoding. -->
+    <meta charset='UTF-8'>
+
+    <!-- Setting the document mode to be X-UA compatible with Microsoft Edge. -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+    <!-- Setting the width of the webpage to render at the width of the screen it's displayed on. -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Vaccinations Page</title>
+
+    <!-- Referencing the associated CSS files for all styling settings. -->
+    <link rel='stylesheet' href='css/vaccinations.css'>
+
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+
+    <link rel='stylesheet' href='css/jquery-ui.min.css'>
+
+    <link rel='stylesheet' href='css/jquery-ui.structure.min.css'>
+
+    <link rel='stylesheet' href='css/jquery-ui.theme.min.css'>
+
+    <link rel='stylesheet' href='css/d3-tip.css'>
+    
+    <!-- Loading the "loader.js" file used in creating the Google API visualizations. -->
+    <script src='https://www.gstatic.com/charts/loader.js'></script>
+
+    <!-- ///////////////////////////////// SOURCE CREDITS //////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////// Globe GIF: https://acegif.com/spinning-globe-gifs/ //////////////////////////////////////////
+        ////// Virus GIF: https://giphy.com/stickers/virus-coronavirus-covid-19-JpjsHmFkBjJtzcBvko /////////
+        ////// Vaccine GIF: https://giphy.com/stickers/cura-vacina-vacinacorona-JUvm3NtqtRhNe4BWxs /////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////// THANK YOU /////////////////////////////////////////////////////
+    -->
+
+    <script>
+        // This function checks for errors in any called function and returns a message on the webpage detailing the problem.
+        function checkError(response) {
+            if (response.isError()) {
+                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                return;
+            }
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        //////////////// GOOGLE CHARTS API FUNCTIONS ////////////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // Loading the appropriate Google Charts API packages. "Geochart" needs a maps API key, which is provided by Google. 
+        google.charts.load('current', {'packages':['corechart', 'geochart'], 'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'}); // This line loads the appropriate Google Charts packages.
+        google.charts.setOnLoadCallback(drawSheet)
+
+        // When the Google Charts API is called, it references this function, which is responsible for calling all successive functions 
+        // for the respective visualizations.
+        function drawSheet() {
+            drawSheetName('people_fully_vaccinated', 'SELECT A, C', RawFullyVaccd_ResponseHandler);
+
+            drawSheetName('vaccination_factors', 'SELECT A, I', GDP_ResponseHandler);
+            drawSheetName('vaccination_factors', 'SELECT A, H', Age_ResponseHandler);
+            drawSheetName('vaccination_factors', 'SELECT A, J', LifeExp_ResponseHandler);
+            drawSheetName('vaccination_factors', 'SELECT A, K', HDI_ResponseHandler);
+            drawSheetName('vaccination_factors', 'SELECT A, G', Stringency_ResponseHandler);
+
+            drawSheetName('prop_people_fully_vaccinated', 'SELECT A, I', PropFullyVaccd_ResponseHandler);
+
+            drawSheetName('prop_people_fully_vaccinated_factors', 'SELECT A, Y, O, C, I', PropGDP_ResponseHandler);
+            drawSheetName('prop_people_fully_vaccinated_factors', 'SELECT A, Y, M, C, I', PropAge_ResponseHandler);
+            drawSheetName('prop_people_fully_vaccinated_factors', 'SELECT A, Y, W, C, I', PropLifeExp_ResponseHandler);
+            drawSheetName('prop_people_fully_vaccinated_factors', 'SELECT A, Y, X, C, I', PropHDI_ResponseHandler);
+            drawSheetName('prop_people_fully_vaccinated_factors', 'SELECT A, Y, J, C, I', PropStringency_ResponseHandler);
+        }
+
+        // This function is responsible for retrieving data from a Google Sheets page on which I put all my data. This 
+        // function takes the query made to the Google Sheets page and sends it to the appropriate response handler.
+        function drawSheetName(sheetName, query, responseHandler) {
+            var queryString = encodeURIComponent(query);
+
+            var query = new google.visualization.Query(
+                'https://docs.google.com/spreadsheets/d/19iZ-MP7LdHa9Hbjxd2nCYokMOP-WaU-RNFSQjFbIDx0/gviz/tq?sheet='
+                + sheetName + '&headers=1&tq=' + queryString);
+
+                query.send(responseHandler);
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        //////////////// WORLD MAP DIV FUNCTION /////////////////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // This response handler takes care of GeoChart construction to display a world map of raw total people 
+        // fully vaccinated.
+        function RawFullyVaccd_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {colorAxis: {colors: ['#b6cd08', '#009dff']}, backgroundColor: '#D8D8D8'};
+
+            var chart = new google.visualization.GeoChart(document.getElementById('raw_fullyvaccd_world_map_div'));
+
+            chart.draw(data, options);
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        /////////// STEPPED AREA CHART COMPARISON FUNCTIONS /////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // This response handler takes care of SteppedAreaChart construction to display GDP per capita statistics.
+        function GDP_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of GDP per Capita by Country',
+                vAxis: {title: 'GDP (int\' dollars)', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Country'},
+                backgroundColor: '#D8D8D8',
+                colors: ['#2f86c5']
+            };
+
+            var chart = new google.visualization.SteppedAreaChart(document.getElementById('gdp_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of SteppedAreaChart construction to display aged 65 or older statistics.
+        function Age_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Percentage Aged 65+ by Country',
+                vAxis: {title: 'Percentage of Population Over 65 (%)', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Country'},
+                backgroundColor: '#D8D8D8',
+                colors: ['#e300ff']
+            };
+
+            var chart = new google.visualization.SteppedAreaChart(document.getElementById('age_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of SteppedAreaChart construction to display life expectancy statistics.
+        function LifeExp_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Life Expectancy by Country',
+                vAxis: {title: 'Life Expectancy (Years)', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Country'},
+                backgroundColor: '#D8D8D8',
+                colors: ['#ff9456']
+            };
+
+            var chart = new google.visualization.SteppedAreaChart(document.getElementById('lifeexp_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of SteppedAreaChart construction to display human development index 
+        // statistics.
+        function HDI_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Human Development Index by Country',
+                vAxis: {title: 'HDI', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Country'},
+                backgroundColor: '#D8D8D8',
+                colors: ['#006c42']
+            };
+
+            var chart = new google.visualization.SteppedAreaChart(document.getElementById('hdi_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of SteppedAreaChart construction to display stringency index 
+        // statistics.
+        function Stringency_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Stringency Index by Country',
+                vAxis: {title: 'Stringency Index Value', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Country'},
+                backgroundColor: '#D8D8D8',
+                colors: ['#ff324c']
+            };
+
+            var chart = new google.visualization.SteppedAreaChart(document.getElementById('stringency_div'));
+
+            chart.draw(data, options);
+        }
+
+        // When called by the appropriate button click, these functions place the respective div on top of the 
+        // other(s) by changing the z-index of the desired div to 1 and all other divs to 0.
+        function gdp_on_top() {
+            document.getElementById('gdp_div').style.zIndex = '1';
+            document.getElementById('age_div').style.zIndex = '0';
+            document.getElementById('lifeexp_div').style.zIndex = '0';
+            document.getElementById('hdi_div').style.zIndex = '0';
+            document.getElementById('stringency_div').style.zIndex = '0';
+        }
+
+        function age_on_top() {
+            document.getElementById('gdp_div').style.zIndex = '0';
+            document.getElementById('age_div').style.zIndex = '1';
+            document.getElementById('lifeexp_div').style.zIndex = '0';
+            document.getElementById('hdi_div').style.zIndex = '0';
+            document.getElementById('stringency_div').style.zIndex = '0';
+        }
+
+        function lifeexp_on_top() {
+            document.getElementById('gdp_div').style.zIndex = '0';
+            document.getElementById('age_div').style.zIndex = '0';
+            document.getElementById('lifeexp_div').style.zIndex = '1';
+            document.getElementById('hdi_div').style.zIndex = '0';
+            document.getElementById('stringency_div').style.zIndex = '0';
+        }
+
+        function hdi_on_top() {
+            document.getElementById('gdp_div').style.zIndex = '0';
+            document.getElementById('age_div').style.zIndex = '0';
+            document.getElementById('lifeexp_div').style.zIndex = '0';
+            document.getElementById('hdi_div').style.zIndex = '1';
+            document.getElementById('stringency_div').style.zIndex = '0';
+        }
+
+        function stringency_on_top() {
+            document.getElementById('gdp_div').style.zIndex = '0';
+            document.getElementById('age_div').style.zIndex = '0';
+            document.getElementById('lifeexp_div').style.zIndex = '0';
+            document.getElementById('hdi_div').style.zIndex = '0';
+            document.getElementById('stringency_div').style.zIndex = '1';
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        //////////////// COLUMN CHART COMPARISON FUNCTION ///////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // This response handler takes care of ColumnChart construction to display people fully 
+        // vaccinated in proportion to population.
+        function PropFullyVaccd_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'People Fully Vaccinated in Proportion to Population',
+                vAxis: {title: 'Percentage of Population Fully Vaccinated (%)', gridlines: {color: '#000000'}, textStyle: {fontSize: 12}},
+                hAxis: {title: 'Country', textStyle: {fontSize: 10}},
+                backgroundColor: '#D8D8D8',
+                colors: ['#b967ff']
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('propfullyvaccd_div'));
+
+            chart.draw(data, options);
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        //////////////// BUBBLE CHART COMPARISON FUNCTIONS //////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // This response handler takes care of BubbleChart construction to display GDP per capita 
+        // in comparison to people fully vaccinated in proportion to population.
+        function PropGDP_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of GDP per Capita and Proportion of People Fully Vaccinated by Country',
+                vAxis: {title: 'GDP per Capita (int\'l dollars)', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Percentage of Population Fully Vaccinated (%)', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('prop_gdp_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BubbleChart construction to display aged 65 or older 
+        // in comparison to people fully vaccinated in proportion to population.
+        function PropAge_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Pop. Aged 65+ and Proportion of People Fully Vaccinated by Country',
+                vAxis: {title: 'Percentage of Population Over 65', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Percentage of Population Fully Vaccinated (%)', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('prop_age_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BubbleChart construction to displaylife expectancy 
+        // in comparison to people fully vaccinated in proportion to population.
+        function PropLifeExp_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Life Expectancy and Proportion of People Fully Vaccinated by Country',
+                vAxis: {title: 'Life Expectancy', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Percentage of Population Fully Vaccinated (%)', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('prop_lifeexp_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BubbleChart construction to display human development
+        // index in comparison to people fully vaccinated in proportion to population.
+        function PropHDI_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Human Dev. Index and Prop. of People Fully Vaccinated by Country',
+                vAxis: {title: 'Human Development Index', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Percentage of Population Fully Vaccinated (%)', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('prop_hdi_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BubbleChart construction to display stringency index 
+        // in comparison to people fully vaccinated in proportion to population.
+        function PropStringency_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Stringency Index and Proportion of People Fully Vaccinated by Country',
+                vAxis: {title: 'Stringency Index', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Percentage of Population Fully Vaccinated (%)', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('prop_stringency_div'));
+
+            chart.draw(data, options);
+        }
+
+        // When called by the appropriate button click, these functions place the respective div on top of the 
+        // other(s) by changing the z-index of the desired div to 1 and all other divs to 0.
+        function prop_gdp_on_top() {
+            document.getElementById('prop_gdp_div').style.zIndex = '1';
+            document.getElementById('prop_age_div').style.zIndex = '0';
+            document.getElementById('prop_lifeexp_div').style.zIndex = '0';
+            document.getElementById('prop_hdi_div').style.zIndex = '0';
+            document.getElementById('prop_stringency_div').style.zIndex = '0';
+        }
+
+        function prop_age_on_top() {
+            document.getElementById('prop_gdp_div').style.zIndex = '0';
+            document.getElementById('prop_age_div').style.zIndex = '1';
+            document.getElementById('prop_lifeexp_div').style.zIndex = '0';
+            document.getElementById('prop_hdi_div').style.zIndex = '0';
+            document.getElementById('prop_stringency_div').style.zIndex = '0';
+        }
+
+        function prop_lifeexp_on_top() {
+            document.getElementById('prop_gdp_div').style.zIndex = '0';
+            document.getElementById('prop_age_div').style.zIndex = '0';
+            document.getElementById('prop_lifeexp_div').style.zIndex = '1';
+            document.getElementById('prop_hdi_div').style.zIndex = '0';
+            document.getElementById('prop_stringency_div').style.zIndex = '0';
+        }
+
+        function prop_hdi_on_top() {
+            document.getElementById('prop_gdp_div').style.zIndex = '0';
+            document.getElementById('prop_age_div').style.zIndex = '0';
+            document.getElementById('prop_lifeexp_div').style.zIndex = '0';
+            document.getElementById('prop_hdi_div').style.zIndex = '1';
+            document.getElementById('prop_stringency_div').style.zIndex = '0';
+        }
+
+        function prop_stringency_on_top() {
+            document.getElementById('prop_gdp_div').style.zIndex = '0';
+            document.getElementById('prop_age_div').style.zIndex = '0';
+            document.getElementById('prop_lifeexp_div').style.zIndex = '0';
+            document.getElementById('prop_hdi_div').style.zIndex = '0';
+            document.getElementById('prop_stringency_div').style.zIndex = '1';
+        }
+    </script>
+</head>
+<body>
+    <!-- Creating a navigation bar that appears at the top of the webpage. -->
+    <div id='header'>
+        <ul>
+            <li id='icon'><img src='https://media1.giphy.com/media/JUvm3NtqtRhNe4BWxs/giphy.gif' width='30' height='30' alt=''></li>
+            <li id='title'>Final Project | Data Visualization</li>
+            <li><a href='home.html'>Home</a></li>
+            <li><a href='infections.html'>Infections</a></li>
+            <li><a href='vaccinations.html'>Vaccinations</a></li>
+            <li id='name'>Benjamin Lee</li>
+        </ul>
+    </div>
+    <div id='content'>
+        <h2>Introduction</h2>
+        <br>
+        <p>
+            In the visualizations below, COVID-19 vaccination data is analyzed. All vaccination data can be found on 
+            Kaggle (<a id='link' href='https://www.kaggle.com/gpreda/covid-world-vaccination-progress' target='_blank'>link</a>).
+        </p>
+        <br>
+        <br>
+        <h2>Raw Total People Fully Vaccinated</h2>
+        <br>
+        <p>
+            In a similar fashion to what was done for <a id='link' href='infections.html' target='_blank'>infections</a>, let's begin by looking at 
+            a distribution of the raw total number of people fully vaccinated across the world.
+        </p>
+        <br>
+        <!-- A div containing the world map visualization. -->
+        <div id='raw_fullyvaccd_world_map_div' style='width: 900px; height: 500px;'></div>
+        <br>
+        <h4>Analysis</h4>
+        <br>
+        <p>
+            Although many countries have not provided data for the number of people fully vaccinated, the United States, Brazil, India, Russia, and many 
+            countries in Europe (United Kingdom, France, Germany) stand out as having some of the most people vaccinated, with the US at well over 85 
+            million people.
+        </p>
+        <br>
+        <p>
+            Now, let's take the top ten countries with the most people fully vaccinated and take a look at how total vaccinations and people fully 
+            vaccinated have changed over time. Of the data available, nearly all countries had data for the month of March. Thus, March 2021 is analyzed.
+        </p>
+        <br>
+        <!-- The content contained in this div is related to the .js file that sets up the Gapminder visualization. -->
+        <div class="container">
+            <div class="row">
+                <div>
+                    <!-- The buttons below are configured in detail in the associated .js file. -->
+                    <button id="play-button" class="btn btn-primary">Play</button>
+                    <button id="reset-button" class="btn btn-primary">Reset</button>
+                    <div id="slider-div">
+                        <label>Date: March <span id="date">1</span>, 2021</label>
+                        <div id="date-slider"></div>
+                    </div>
+                </div>
+    
+                <!-- The continent selection dropdown lets users filter the display by continent. -->
+                <div class="col-md-6">
+                    <select id="continent-select" class="form-control">
+                        <option selected value="all">All</option>
+                        <option value="americas">Americas</option>
+                        <option value="asia">Asia</option>
+                        <option value="europe">Europe</option>
+                    </select>
+                </div>
+            </div>                 
+            </div>
+        </div>
+        <!-- A container div in which the SVG constructed in the associated .js file sits. -->
+        <div id='chart_container'>
+            <div id="gapminder_vaccination_timeline"></div> 
+        </div>
+    </div>
+    <div id='content_2'>
+        <h4>Analysis</h4>
+        <br>
+        <p>
+            The United States is head and shoulders above the other top-ten countries. By the end 
+            of March, the US has fully vaccinated nearly 16% of its population, while India has fully vaccinated 
+            only 0.71%. India's large population of over a billion puts its nearly 10 million fully vaccinated 
+            people into proportion; India still has a long way to go. The European countries are progressing very slowly
+            and do not leave the bottom-left corner of the graphic.
+        </p>
+        <br>
+        <h2>Demographic & Health-Related Factors: Raw Data</h2>
+        <br>
+        <p>
+            Now, let's take a look at some of the more relevant demographic and health-related factors and how 
+            they impact the top ten countries with the most people fully vaccinated. In this section, we will be 
+            looking at factors such as GDP per capita, stringency index, life expectancy and aged 65 and older.
+        </p>
+        <br>
+        <!-- A div containing the dropdown menu to select different types of visualizations. -->
+        <div class='dropdown_button'>
+            <button class='drop_button'>Select Type</button>
+            <div class='dropdown_button_content'>
+                <!-- When a button is clicked, it will run the respective "on_top()" function to place the appropriate visualization on 
+                top (like a stack of cards; shifts the z-index to 1). -->
+                <button type='button' id='gdp_button' onclick='gdp_on_top()'>GDP per Capita</button>
+                <button type='button' id='age_button' onclick='age_on_top()'>Aged 65+</button>
+                <button type='button' id='lifeexp_button' onclick='lifeexp_on_top()'>Life Expectancy</button>
+                <button type='button' id='hdi_button' onclick='hdi_on_top()'>HDI</button>
+                <button type='button' id='stringency_button' onclick='stringency_on_top()'>Stringency</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div id='stepped_area_charts'>
+            <!-- This container has two divs, each of which reference their respective visualization created using the functions desribed in the
+            header section above. -->
+            <div class='stepped_area_charts_container'>
+                <div class='gdp' id='gdp_div' style='padding-left: 100px; width: 850px; height: 500px;'></div>
+                <div class='age' id='age_div' style='padding-left: 100px; width: 850px; height: 500px;'></div>
+                <div class='lifeexp' id='lifeexp_div' style='padding-left: 100px; width: 850px; height: 500px;'></div>
+                <div class='hdi' id='hdi_div' style='padding-left: 100px; width: 850px; height: 500px;'></div>
+                <div class='stringency' id='stringency_div' style='padding-left: 100px; width: 850px; height: 500px;'></div>
+            </div>
+        </div>
+        <h4>Analysis</h4>
+        <br>
+        <p>
+            The above plots are ordered from left to right in terms of most to least people fully vaccinated. In general, GDP
+            per capita is a higher for countries with more people fully vaccinated, while aged 65+ and stringency index are 
+            generally lower. HDI and life expectancy average around the same across the 10 countries, with some outliers in India.
+        </p>
+        <br>
+        <br>
+        <h2>Proportionate Total People Fully Vaccinated</h2>
+        <br>
+        <p>
+            Raw total vaccination values can be quite misleading. India placed second in terms of most people vaccinated (~10 million), 
+            but with a population of over a billion those values are miniscule. Let's take a look at the number of people fully 
+            vaccinated in proportion to a given country's population. This should give us a better sense of which country is really 
+            on track to become fully vaccinated first.
+        </p>
+        <!-- A div in which the associate column chart is constructed. -->
+        <div id='propfullyvaccd_div' style='width: 950px; height:400px;'></div>
+        <br>
+        <h4>Analysis</h4>
+        <br>
+        <p>
+            As expected, a variety of small countries top the proportional list in a fashion similar to the analysis done on infection. 
+            Gibralter has vaccinated an astounding 93% of their population, while the US, who previously boasted the highest spot in 
+            raw vaccinations, sits at a mere 26%. Israel sitting at second place in the above graphic (57% vaccinated) is rather 
+            impressive, given their population size of over 8 million.
+        </p>
+        <br>
+        <br>
+        <h2>Demographic & Health-Related Factors: Proportionate Data</h2>
+        <br>
+        <p>
+            Now, let's take a look at what relevant demographic and health-related factors may influence proportionate vaccinations.
+        </p>
+        <br>
+        <div class='dropdown_button'>
+            <button class='drop_button'>Select Type</button>
+            <div class='dropdown_button_content'>
+                <!-- When a button is clicked, it will run the respective "on_top()" function to place the appropriate visualization on 
+                top (like a stack of cards; shifts the z-index to 1). -->
+                <button type='button' id='prop_gdp_button' onclick='prop_gdp_on_top()'>GDP per Capita</button>
+                <button type='button' id='prop_age_button' onclick='prop_age_on_top()'>Aged 65+</button>
+                <button type='button' id='prop_lifeexp_button' onclick='prop_lifeexp_on_top()'>Life Expectancy</button>
+                <button type='button' id='prop_hdi_button' onclick='prop_hdi_on_top()'>HDI</button>
+                <button type='button' id='prop_stringency_button' onclick='prop_stringency_on_top()'>Stringency</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div id='bubble_chart' style='padding-left: 10px;'>
+            <div class='bubble_chart_container'>
+                <!-- This container has two divs, each of which reference their respective visualization created using the functions desribed in the
+                header section above. -->
+                <div class = 'prop_gdp' id='prop_gdp_div' style='width: 900px; height: 500px;'></div>
+                <div class = 'prop_age' id='prop_age_div' style='width: 900px; height: 500px;'></div>
+                <div class = 'prop_lifeexp' id='prop_lifeexp_div' style='width: 900px; height: 500px;'></div>
+                <div class = 'prop_hdi' id='prop_hdi_div' style='width: 900px; height: 500px;'></div>
+                <div class = 'prop_stringency' id='prop_stringency_div' style='width: 900px; height: 500px;'></div>
+            </div>
+        </div>
+        <h4>Analysis</h4>
+        <br>
+        <p>
+            On a fair level where all vaccination statistics are as a percentage of population, the results are more in line 
+            with expectations: GDP, human development index and stringency index are positively correlated with number of people 
+            that are fully vaccinated.
+        </p>
+        <br>
+        <h2>Fastest-Vaccinated Country</h2>
+        <br>
+        <p>
+            Let's analyze the average percentage of a given country's population that receives a dose of the vaccine 
+            every day. This will provide helpful insight into understanding what countries are vaccinating their population the quickest,
+            and when taken in tandem with the previous section can help us make a decision on what country will reach full population 
+            immunity first.
+        </p>
+        <br>
+        <!-- A div in which the SVG constructed from the associated .js file sits. -->
+        <div id='average_daily_vaccination_progress'></div>
+        <h2>Conclusion</h2>
+        <br>
+        <p>
+            The country that's most likely to gain full population immunity is Gibralter. Although Bhutan averages over 3.5% of its population 
+            vaccinated per day (versus Gibralter's 2%), data on the number of people fully vaccinated is missing for Bhutan. Combining this with 
+            the fact that Gibralter has already vaccinated 93% of its population is more than enough evidence to conjecture that Gibralter will 
+            be returning to pre-pandemic "normalcy" the soonest! 
+        </p>
+        <br>
+    </div>
+
+    <!-- All associated JavaScript files used to construct the D3.js visualizations. -->
+    <script src='js/jquery.min.js'></script>
+
+    <script src='js/jquery-ui.min.js'></script>
+
+    <script src='js/bootstrap.min.js'></script>
+
+    <script src='js/d3.min.js'></script>
+
+    <script src='js/d3-tip.js'></script>
+
+    <script src='js/gapminder_vaccination_timeline.js'></script>
+
+    <script src='js/average_daily_vaccination_progress.js'></script>
+</body>
+</html>

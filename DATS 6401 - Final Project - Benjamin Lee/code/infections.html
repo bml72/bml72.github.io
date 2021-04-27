@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Setting the character set to use UTF-8 encoding. -->
+    <meta charset='UTF-8'>
+
+    <!-- Setting the document mode to be X-UA compatible with Microsoft Edge. -->
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+    <!-- Setting the width of the webpage to render at the width of the screen it's displayed on. -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <title>Infections Page</title>
+
+    <!-- Referencing the associated CSS files for all styling settings. -->
+    <link rel='stylesheet' href='css/infections.css'>
+
+    <link rel='stylesheet' href='css/d3-tip.css'>
+
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+
+    <!-- Loading the "loader.js" file used in creating the Google API visualizations. -->
+    <script src='https://www.gstatic.com/charts/loader.js'></script>
+
+    <!-- ///////////////////////////////// SOURCE CREDITS //////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////// Globe GIF: https://acegif.com/spinning-globe-gifs/ //////////////////////////////////////////
+        ////// Virus GIF: https://giphy.com/stickers/virus-coronavirus-covid-19-JpjsHmFkBjJtzcBvko /////////
+        ////// Vaccine GIF: https://giphy.com/stickers/cura-vacina-vacinacorona-JUvm3NtqtRhNe4BWxs /////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////// THANK YOU /////////////////////////////////////////////////////
+    -->
+    
+    <script>
+        // This function checks for errors in any called function and returns a message on the webpage detailing the problem.
+        function checkError(response) {
+            if (response.isError()) {
+                alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                return;
+            }
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        //////////////// GOOGLE CHARTS API FUNCTIONS ////////////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // Loading the appropriate Google Charts API packages. "Geochart" needs a maps API key, which is provided by Google. 
+        google.charts.load('current', {'packages':['corechart', 'geochart'], 'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'}); 
+        google.charts.setOnLoadCallback(drawSheet)
+
+        // When the Google Charts API is called, it references this function, which is responsible for calling all successive functions 
+        // for the respective visualizations.
+        function drawSheet() {
+            drawSheetName('raw_total_cases_and_deaths', 'SELECT A, B', Total_Cases_ResponseHandler);
+            drawSheetName('raw_total_cases_and_deaths', 'SELECT A, C', Total_Deaths_ResponseHandler);
+            
+            drawSheetName('raw_top_ten_averages', 'SELECT A, C, F, B, D', Median_Age_ResponseHandler);
+            drawSheetName('raw_top_ten_averages', 'SELECT A, C, G, B, D', Aged_65_Older_ResponseHandler);
+            drawSheetName('raw_top_ten_averages', 'SELECT A, C, K, B, D', Cardiovascular_ResponseHandler);
+            drawSheetName('raw_top_ten_averages', 'SELECT A, C, L, B, D', Diabetes_ResponseHandler);
+            drawSheetName('raw_top_ten_averages', 'SELECT A, C, O, B, D', Smokers_ResponseHandler);
+
+            drawSheetName('prop_cases_top_ten_averages', 'SELECT A, D', Prop_Cases_Median_Age_ResponseHandler);
+            drawSheetName('prop_cases_top_ten_averages', 'SELECT A, E', Prop_Cases_Aged_65_Older_ResponseHandler);
+            drawSheetName('prop_cases_top_ten_averages', 'SELECT A, I', Prop_Cases_Cardiovascular_ResponseHandler);
+            drawSheetName('prop_cases_top_ten_averages', 'SELECT A, J', Prop_Cases_Diabetes_ResponseHandler);
+            drawSheetName('prop_cases_top_ten_averages', 'SELECT A, M', Prop_Cases_Smokers_ResponseHandler);
+
+
+            drawSheetName('prop_deaths_top_ten_averages', 'SELECT A, D', Prop_Deaths_Median_Age_ResponseHandler);
+            drawSheetName('prop_deaths_top_ten_averages', 'SELECT A, E', Prop_Deaths_Aged_65_Older_ResponseHandler);
+            drawSheetName('prop_deaths_top_ten_averages', 'SELECT A, I', Prop_Deaths_Cardiovascular_ResponseHandler);
+            drawSheetName('prop_deaths_top_ten_averages', 'SELECT A, J', Prop_Deaths_Diabetes_ResponseHandler);
+            drawSheetName('prop_deaths_top_ten_averages', 'SELECT A, M', Prop_Deaths_Smokers_ResponseHandler);
+        }
+
+        // This function is responsible for retrieving data from a Google Sheets page on which I put all my data. This 
+        // function takes the query made to the Google Sheets page and sends it to the appropriate response handler.
+        function drawSheetName(sheetName, query, responseHandler) {
+            var queryString = encodeURIComponent(query);
+
+            var query = new google.visualization.Query(
+                'https://docs.google.com/spreadsheets/d/19iZ-MP7LdHa9Hbjxd2nCYokMOP-WaU-RNFSQjFbIDx0/gviz/tq?sheet='
+                + sheetName + '&headers=1&tq=' + queryString);
+
+                query.send(responseHandler);
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        //////////////// WORLD MAP DIV FUNCTIONS ////////////////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // This response handler takes care of GeoChart construction to display a world map of total cases.
+        function Total_Cases_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {colorAxis: {colors: ['#ffd823', '#ff5656']}, backgroundColor: '#D8D8D8'};
+
+            var chart = new google.visualization.GeoChart(document.getElementById('cases_map_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of GeoChart construction to display a world map of total deaths.
+        function Total_Deaths_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {colorAxis: {colors: ['#ffd823', '#ff5656']}, backgroundColor: '#D8D8D8'};
+
+            var chart = new google.visualization.GeoChart(document.getElementById('deaths_map_div'));
+
+            chart.draw(data, options);
+        }
+
+        // When called by the appropriate button click, these functions place the respective div on top of the 
+        // other(s) by changing the z-index of the desired div to 1 and all other divs to 0.
+        function total_cases_on_top() {
+            document.getElementById('cases_map_div').style.zIndex = '1';
+            document.getElementById('deaths_map_div').style.zIndex = '0';
+        }
+
+        function total_deaths_on_top() {
+            document.getElementById('cases_map_div').style.zIndex = '0';
+            document.getElementById('deaths_map_div').style.zIndex = '1';
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        //////////////// BUBBLE CHART COMPARISON FUNCTIONS //////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // This response handler takes care of BubbleChart construction to display median age statistics.
+        function Median_Age_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Median Age and Raw Total Deaths by Country',
+                vAxis: {title: 'Median Age (Years)', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Raw Total Deaths', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('median_age_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BubbleChart construction to display aged 65 and older statistics.
+        function Aged_65_Older_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Aged 65 and Older and Raw Total Deaths by Country',
+                vAxis: {title: 'Percentage of Pop. Aged 65 and Older (%)', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Raw Total Deaths', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('aged_65_or_older_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BubbleChart construction to display cardiovascular death rate statistics.
+        function Cardiovascular_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Cardiovascular Death Rate and Raw Total Deaths by Country',
+                vAxis: {title: 'Cardiovacular Death Rate', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Raw Total Deaths', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('cardiovascular_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BubbleChart construction to display diabetes prevalence statistics.
+        function Diabetes_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Diabetes Prevalence and Raw Total Deaths by Country',
+                vAxis: {title: 'Diabetes Prevalence (% of Pop. aged 20 to 79)', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Raw Total Deaths', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('diabetes_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BubbleChart construction to display percentage of smokers statistics.
+        function Smokers_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Share of Smokers and Raw Total Deaths by Country',
+                vAxis: {title: 'Percentage of Pop. That Smoke (%)', gridlines: {color: '#000000'}},
+                hAxis: {title: 'Raw Total Deaths', textStyle: {fontSize: 10}, gridlines: {color: '#000000'}},
+                bubble: {textStyle: {fontSize: 11, auraColor: '#FFFFFF'}},
+                backgroundColor: '#D8D8D8'
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('smokers_div'));
+
+            chart.draw(data, options);
+        }
+
+        // When called by the appropriate button click, these functions place the respective div on top of the 
+        // other(s) by changing the z-index of the desired div to 1 and all other divs to 0.
+        function median_age_on_top() {
+            document.getElementById('median_age_div').style.zIndex = '1';
+            document.getElementById('aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cardiovascular_div').style.zIndex = '0';
+            document.getElementById('diabetes_div').style.zIndex = '0';
+            document.getElementById('smokers_div').style.zIndex = '0';
+        }
+
+        function aged_65_or_older_on_top() {
+            document.getElementById('median_age_div').style.zIndex = '0';
+            document.getElementById('aged_65_or_older_div').style.zIndex = '1';
+            document.getElementById('cardiovascular_div').style.zIndex = '0';
+            document.getElementById('diabetes_div').style.zIndex = '0';
+            document.getElementById('smokers_div').style.zIndex = '0';
+        }
+
+        function cardiovascular_on_top() {
+            document.getElementById('median_age_div').style.zIndex = '0';
+            document.getElementById('aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cardiovascular_div').style.zIndex = '1';
+            document.getElementById('diabetes_div').style.zIndex = '0';
+            document.getElementById('smokers_div').style.zIndex = '0';
+        }
+
+        function diabetes_on_top() {
+            document.getElementById('median_age_div').style.zIndex = '0';
+            document.getElementById('aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cardiovascular_div').style.zIndex = '0';
+            document.getElementById('diabetes_div').style.zIndex = '1';
+            document.getElementById('smokers_div').style.zIndex = '0';
+        }
+
+        function smokers_on_top() {
+            document.getElementById('median_age_div').style.zIndex = '0';
+            document.getElementById('aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cardiovascular_div').style.zIndex = '0';
+            document.getElementById('diabetes_div').style.zIndex = '0';
+            document.getElementById('smokers_div').style.zIndex = '1';
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        //////// TOTAL CASES BAR CHART COMPARISON FUNCTIONS /////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // This response handler takes care of BarChart construction to display median age in comparison to 
+        // proportionate total cases.
+        function Prop_Cases_Median_Age_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Median Age vs Proportionate Total Cases by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Median Age (Years)', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#c97c7c']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('cases_median_age_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BarChart construction to display aged 65 or older in 
+        // comparison to proportionate total cases.
+        function Prop_Cases_Aged_65_Older_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of % of Pop. Aged 65+ vs Proportionate Total Cases by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Percentage of Population Aged 65 and Older', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#78bd92']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('cases_aged_65_or_older_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BarChart construction to display cardiovascular death rate in 
+        // comparison to proportionate total cases.
+        function Prop_Cases_Cardiovascular_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Cardiovas. Death Rate vs Proportionate Total Cases by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Cardiovascular Death Rate', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#104681']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('cases_cardiovascular_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BarChart construction to display diabetes prevalence in 
+        // comparison to proportionate total cases.
+        function Prop_Cases_Diabetes_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of % of Pop. with Diabetes vs Proportionate Total Cases by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Diabetes Prevalence (% of Population aged 20 to 79)', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#7c8abd']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('cases_diabetes_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BarChart construction to display smoker data in comparison 
+        // to proportionate total cases.
+        function Prop_Cases_Smokers_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of % of Pop. that Smokes vs Proportionate Total Cases by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Percentage of Population that Smokes (% of Population aged 20 to 79)', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#dfa863']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('cases_smokers_div'));
+
+            chart.draw(data, options);
+        }
+
+        // When called by the appropriate button click, these functions place the respective div on top of the 
+        // other(s) by changing the z-index of the desired div to 1 and all other divs to 0.
+        function cases_median_age_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '1';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('cases_diabetes_div').style.zIndex = '0';
+            document.getElementById('cases_smokers_div').style.zIndex = '0';
+            document.getElementById('deaths_median_age_div').style.zIndex = '0';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '0';
+            document.getElementById('deaths_smokers_div').style.zIndex = '0';
+        }
+
+        function cases_aged_65_or_older_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '0';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '1';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('cases_diabetes_div').style.zIndex = '0';
+            document.getElementById('cases_smokers_div').style.zIndex = '0';
+            document.getElementById('deaths_median_age_div').style.zIndex = '0';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '0';
+            document.getElementById('deaths_smokers_div').style.zIndex = '0';
+        }
+
+        function cases_cardiovascular_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '0';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '1';
+            document.getElementById('cases_diabetes_div').style.zIndex = '0';
+            document.getElementById('cases_smokers_div').style.zIndex = '0';
+            document.getElementById('deaths_median_age_div').style.zIndex = '0';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '0';
+            document.getElementById('deaths_smokers_div').style.zIndex = '0';
+        }
+
+        function cases_diabetes_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '0';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('cases_diabetes_div').style.zIndex = '1';
+            document.getElementById('cases_smokers_div').style.zIndex = '0';
+            document.getElementById('deaths_median_age_div').style.zIndex = '0';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '0';
+            document.getElementById('deaths_smokers_div').style.zIndex = '0';
+        }
+
+        function cases_smokers_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '0';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('cases_diabetes_div').style.zIndex = '0';
+            document.getElementById('cases_smokers_div').style.zIndex = '1';
+            document.getElementById('deaths_median_age_div').style.zIndex = '0';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '0';
+            document.getElementById('deaths_smokers_div').style.zIndex = '0';
+        }
+
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+        //////// TOTAL DEATHS BAR CHART COMPARISON FUNCTIONS ////////////
+        /////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////
+
+        // This response handler takes care of BarChart construction to display median age in comparison to 
+        // proportionate total deaths.
+        function Prop_Deaths_Median_Age_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Median Age vs Proportionate Total Deaths by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Median Age (Years)', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#c97c7c']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('deaths_median_age_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BarChart construction to display aged 65 or older in 
+        // comparison to proportionate total deaths.
+        function Prop_Deaths_Aged_65_Older_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of % of Pop. Aged 65+ vs Proportionate Total Deaths by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Percentage of Population Aged 65 and Older', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#78bd92']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('deaths_aged_65_or_older_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BarChart construction to display cardiovascular death rate in 
+        // comparison to proportionate total deaths.
+        function Prop_Deaths_Cardiovascular_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of Cardiovas. Death Rate vs Proportionate Total Deaths by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Cardiovascular Death Rate', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#104681']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('deaths_cardiovascular_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BarChart construction to display diabetes prevalence in 
+        // comparison to proportionate total deaths.
+        function Prop_Deaths_Diabetes_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of % of Pop. with Diabetes vs Proportionate Total Deaths by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Diabetes Prevalence (% of Population aged 20 to 79)', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#7c8abd']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('deaths_diabetes_div'));
+
+            chart.draw(data, options);
+        }
+
+        // This response handler takes care of BarChart construction to display smoker data in comparison 
+        // to proportionate total deaths.
+        function Prop_Deaths_Smokers_ResponseHandler(response) {
+            checkError(response);
+
+            var data = response.getDataTable();
+
+            var options = {
+                title: 'Comparison of % of Pop. that Smokes vs Proportionate Total Deaths by Country',
+                backgroundColor: '#D8D8D8',
+                hAxis: {title: 'Percentage of Population that Smokes (% of Population aged 20 to 79)', gridlines: {color: '#000000'}},
+                vAxis: {title: 'Country'},
+                bar: {groupWidth: '95%'},
+                legend: {position: 'none'},
+                colors: ['#dfa863']
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('deaths_smokers_div'));
+
+            chart.draw(data, options);
+        }
+
+        // When called by the appropriate button click, these functions place the respective div on top of the 
+        // other(s) by changing the z-index of the desired div to 1 and all other divs to 0.
+        function deaths_median_age_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '0';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('cases_diabetes_div').style.zIndex = '0';
+            document.getElementById('cases_smokers_div').style.zIndex = '0';
+            document.getElementById('deaths_median_age_div').style.zIndex = '1';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '0';
+            document.getElementById('deaths_smokers_div').style.zIndex = '0';
+        }
+
+        function deaths_aged_65_or_older_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '0';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('cases_diabetes_div').style.zIndex = '0';
+            document.getElementById('cases_smokers_div').style.zIndex = '0';
+            document.getElementById('deaths_median_age_div').style.zIndex = '0';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '1';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '0';
+            document.getElementById('deaths_smokers_div').style.zIndex = '0';
+        }
+
+        function deaths_cardiovascular_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '0';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('cases_diabetes_div').style.zIndex = '0';
+            document.getElementById('cases_smokers_div').style.zIndex = '0';
+            document.getElementById('deaths_median_age_div').style.zIndex = '0';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '1';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '0';
+            document.getElementById('deaths_smokers_div').style.zIndex = '0';
+        }
+
+        function deaths_diabetes_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '0';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('cases_diabetes_div').style.zIndex = '0';
+            document.getElementById('cases_smokers_div').style.zIndex = '0';
+            document.getElementById('deaths_median_age_div').style.zIndex = '0';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '1';
+            document.getElementById('deaths_smokers_div').style.zIndex = '0';
+        }
+
+        function deaths_smokers_on_top() {
+            document.getElementById('cases_median_age_div').style.zIndex = '0';
+            document.getElementById('cases_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('cases_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('cases_diabetes_div').style.zIndex = '0';
+            document.getElementById('cases_smokers_div').style.zIndex = '0';
+            document.getElementById('deaths_median_age_div').style.zIndex = '0';
+            document.getElementById('deaths_aged_65_or_older_div').style.zIndex = '0';
+            document.getElementById('deaths_cardiovascular_div').style.zIndex = '0';
+            document.getElementById('deaths_diabetes_div').style.zIndex = '0';
+            document.getElementById('deaths_smokers_div').style.zIndex = '1';
+        }
+    </script>
+</head>
+<body>
+    <!-- Creating a navigation bar that appears at the top of the webpage. -->
+    <div id='header'>
+        <ul>
+            <li id='icon'><img src='https://media4.giphy.com/media/JpjsHmFkBjJtzcBvko/giphy.gif' width='30' height='30' alt=''></li>
+            <li id='title'>Final Project | Data Visualization</li>
+            <li><a href='home.html'>Home</a></li>
+            <li><a href='infections.html'>Infections</a></li>
+            <li><a href='vaccinations.html'>Vaccinations</a></li>
+            <li id='name'>Benjamin Lee</li>
+        </ul>
+    </div>
+    <div id='content'>
+        <h2>Introduction</h2>
+        <br>
+        <p>
+            In the visualizations below, COVID-19 infection data is analyzed. All infection data can be found on 
+            the Our World in Data <a id='link' href='https://ourworldindata.org/coronavirus-source-data' target='_blank'>website</a>.
+        </p>
+        <br>
+        <br>
+        <h2>Raw Total Cases and Deaths</h2>
+        <br>
+        <p>
+            To begin, let's look at a world heatmap to assess the overall impact COVID-19 has had on the world.
+        </p>
+        <br>
+        <!-- A div containing the world map visualizations. -->
+        <div id='world_map'>
+            <!-- A div containing the dropdown menu to select different types of visualizations. -->
+            <div class='dropdown_button'>
+                <button class='drop_button'>Select Type</button>
+                <div class='dropdown_button_content'>
+                    <!-- When a button is clicked, it will run the respective "on_top()" function to place the appropriate visualization on 
+                    top (like a stack of cards; shifts the z-index to 1). -->
+                    <button type='button' id='total_cases_button' onclick='total_cases_on_top()'>Total Cases</button>
+                    <button type='button' id='total_deaths_button' onclick='total_deaths_on_top()'>Total Deaths</button>
+                </div>
+            </div>
+            <!-- This container has two divs, each of which reference their respective visualization created using the functions desribed in the
+            header section above. -->
+            <div class='total_cases_and_deaths_container'>
+                <div class='total_cases' id='cases_map_div' style='width: 950px; height: 500px;'></div>
+                <div class='total_deaths' id='deaths_map_div' style='width: 950px; height: 500px;'></div>
+            </div>
+        </div>
+        <h4>Analysis</h4>
+        <br>
+        <p>
+            The overall color distribution does not change significantly between plots; North America, South America, Europe and Asia 
+            (specifically, India) all possess countries with both very high cases and deaths. The United States, Brazil, Russia and India 
+            stand out as having some of the highest COVID-19 cases and deaths, which is symbolized by their reddish-orange coloring. 
+        </p>
+        <br>
+        <p>
+            Although all countries in the world were affected by the COVID-19 pandemic, some countries suffered worse than others. 
+            The bar graphs below illustrate the ten countries that possess the highest raw total cases and deaths to date.
+        </p>
+        <!-- The divs contained here set up the space to place the associated SVGs constructed by the respective .js files. -->
+        <div id='raw_cases_and_deaths_container'>
+            <div id='raw_cases'></div>
+            <div id='raw_deaths'></div>
+        </div>
+        <h4>Analysis</h4>
+        <br>
+        <p>
+            The United States is the leader in both cases and deaths, with over 31 million confirmed cases (~10% of population) and over 
+            570,000 deaths. Let's take a look at some of the more quantifiable demographic and health-related factors associated with the 
+            top ten countries.
+        </p>
+        <br>
+        <br>
+        <h2>Demographic & Health-Related Factors: Raw Data</h2>
+        <br>
+        <p>
+            Due to the fact that COVID-19 is a respiratory disease, countries with an older population and high prevalence of existing 
+            medical conditions (i.e. diabetes, smoking) are likely to possess a proportionately higher number of total cases and deaths. 
+            The bubble charts below compare the number of deaths with different demographic and health-related factors for the top ten 
+            countries in terms of raw total cases and deaths. Note that values for the different factors were taken as averages.
+        </p>
+        <br>
+        <!-- A div containing the dropdown menu to select different types of visualizations. -->
+        <div class='dropdown_button'>
+            <button class='drop_button'>Select Type</button>
+            <div class='dropdown_button_content'>
+                <!-- When a button is clicked, it will run the respective "on_top()" function to place the appropriate visualization on 
+                top (like a stack of cards; shifts the z-index to 1). -->
+                <button type='button' id='median_age_button' onclick='median_age_on_top()'>Median Age</button>
+                <button type='button' id='aged65_older_button' onclick='aged_65_or_older_on_top()'>Aged 65+</button>
+                <button type='button' id='cardiovas_deaths_button' onclick='cardiovascular_on_top()'>Cardiovascular</button>
+                <button type='button' id='diabetes_prev_button' onclick='diabetes_on_top()'>Diabetes</button>
+                <button type='button' id='smokers_button' onclick='smokers_on_top()'>Smoking</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div id='bubble_chart'>
+            <!-- This container has five divs, each of which reference their respective visualization created using the functions desribed in the
+            header section above. -->
+            <div class='bubble_chart_container'>
+                <div class='median_age' id='median_age_div' style='width: 900px; height: 500px;'></div>
+                <div class='aged65_older' id='aged_65_or_older_div' style='width: 900px; height: 500px;'></div>
+                <div class='cardiovas_deaths' id='cardiovascular_div' style='width: 900px; height: 500px;'></div>
+                <div class='diabetes_prev' id='diabetes_div' style='width: 900px; height: 500px;'></div>
+                <div class='smokers' id='smokers_div' style='width: 900px; height: 500px;'></div>
+            </div>
+        </div>
+        <h4>Analysis</h4>
+        <br>
+        <p>
+            The assumption made prior to this visualization is that countries with higher values in these factors would likely boast 
+            higher total deaths. However, apart from diabetes prevalence, the results couldn't be further from the assumptions. For 
+            median age, aged 65+, cardiovascular death rate, and percentage of population that are smokers, countries with higher values 
+            in these areas boasted lower total deaths. However, in proportion to the other countries in this dataset all of these values 
+            are typically higher.
+        </p>
+        <br>
+        <br>
+        <h2>Proportionate Total Cases and Deaths</h2>
+        <br>
+        <p>
+            Statistics for raw total cases and deaths can be mildly deceiving; what truly defines a country as having "suffered"? For example, 
+            the US boasts the most raw total cases and deaths, and in proportion to their population these statistics are in fact quite 
+            disturbing. However, India places fourth in terms of cases and deaths, but in proportion to its population of over a billion those 
+            numbers are miniscule. In this section, we analyze total cases in deaths in proportion to a given country's total population. 
+        </p>
+        <!-- The divs contained here set up the space to place the associated SVGs constructed by the respective .js files. -->
+        <div id='prop_cases_and_deaths_container'>
+            <div id='prop_cases'></div>
+            <div id='prop_deaths'></div>
+        </div>
+        <h4>Analysis</h4>
+        <BR>
+        <p>
+            Apart from the United States, no country in the plots above appear in the raw total cases and deaths plots. This is likely due to the 
+            fact that many of the countries above have smaller populations. Andorra appears to have suffered the most COVID-19 cases in proportion 
+            to its population (16.75% infected), while Hungary suffered the most proportionately in deaths (0.269% died). Although proportionately 
+            these countries suffer greatly, the fact that over half a million people have died in the US is still hard to swallow.
+        </p>
+        <br>
+        <br>
+        <h2>Demographic & Health-Related Factors: Proportionate Data</h2>
+        <br>
+        <p>
+            Now that we've seen the stark differences in raw vs proportionate data, let's take a look at what factors may contribute to the suffering 
+            imposed by COVID-19. 
+        </p>
+        <br>
+        <!-- A div containing the dropdown menu to select different types of visualizations. -->
+        <div class='dropdown_button'>
+            <button class='drop_button'>Select Type</button>
+            <div class='dropdown_button_content'>
+                <!-- When a button is clicked, it will run the respective "on_top()" function to place the appropriate visualization on 
+                top (like a stack of cards; shifts the z-index to 1). -->
+                <button type='button' id='propcases_medianage_button' onclick='cases_median_age_on_top()'>Median Age (Cases)</button>
+                <button type='button' id='propdeaths_medianage_button' onclick='deaths_median_age_on_top()'>Median Age (Deaths)</button>
+                <button type='button' id='propcases_aged65older_button' onclick='cases_aged_65_or_older_on_top()'>Aged 65+ (Cases)</button>
+                <button type='button' id='propdeaths_aged65older_button' onclick='deaths_aged_65_or_older_on_top()'>Aged 65+ (Deaths)</button>
+                <button type='button' id='propcases_cardiovas_button' onclick='cases_cardiovascular_on_top()'>Cardiovascular (Cases)</button>
+                <button type='button' id='propdeaths_cardiovas_button' onclick='deaths_cardiovascular_on_top()'>Cardiovascular (Deaths)</button>
+                <button type='button' id='propcases_diabetes_button' onclick='cases_diabetes_on_top()'>Diabetes (Cases)</button>
+                <button type='button' id='propdeaths_diabetes_button' onclick='deaths_diabetes_on_top()'>Diabetes (Deaths)</button>
+                <button type='button' id='propcases_smokers_button' onclick='cases_smokers_on_top()'>Smoking (Cases)</button>
+                <button type='button' id='propdeaths_smokers_button' onclick='deaths_smokers_on_top()'>Smoking (Deaths)</button>
+            </div>
+        </div>
+        <div id='prop_barcharts'>
+            <!-- This container has five divs, each of which reference their respective visualization created using the functions desribed in the
+            header section above. -->
+            <div class='prop_barcharts_container'>
+                <div class='propcases_medianage_bar' id='cases_median_age_div' style='width: 860px; height: 500px;'></div>
+                <div class='propcases_aged65older_bar' id='cases_aged_65_or_older_div' style='width: 860px; height: 500px;'></div>
+                <div class='propcases_cardiovas_bar' id='cases_cardiovascular_div' style='width: 860px; height: 500px;'></div>
+                <div class='propcases_diabetes_bar' id='cases_diabetes_div' style='width: 860px; height: 500px;'></div>
+                <div class='propcases_smokers_bar' id='cases_smokers_div' style='width: 860px; height: 500px;'></div>
+                <div class='propdeaths_medianage_bar' id='deaths_median_age_div' style='width: 860px; height: 500px;'></div>
+                <div class='propdeaths_aged65older_bar' id='deaths_aged_65_or_older_div' style='width: 860px; height: 500px;'></div>
+                <div class='propdeaths_cardiovas_bar' id='deaths_cardiovascular_div' style='width: 860px; height: 500px;'></div>
+                <div class='propdeaths_diabetes_bar' id='deaths_diabetes_div' style='width: 860px; height: 500px;'></div>
+                <div class='propdeaths_smokers_bar' id='deaths_smokers_div' style='width: 860px; height: 500px;'></div>
+            </div>
+        </div>
+        <h4>Analysis</h4>
+        <br>
+        <p>
+            Despite cases like Andorra and San Marino where little data existed, the values of these factors for the countries considered are all high 
+            compared to other countries in the dataset. For example, Serbia places in the top 5 in the infections dataset for cardiovascular death rate; 
+            it is not uncommon that a country boasting this statistic is also in the top 10 for most proportionate COVID-19 cases.
+        </p>
+        <br>
+        <br>
+        <h2>Conclusions</h2>
+        <br>
+        <p>
+            The country that has suffered the most on a raw scale is definitely the United States, while the countres that have suffered the most on a scale 
+            in proportion to population are Andorra and Hungary. However, I believe <strong>the US has suffered the most overall</strong>. Although in 
+            proportion to its population the US has not had as many cases or deaths, the numbers compared to other countries are simply too large to ignore. 
+            No other country in the world is even close to the US in COVID-19 deaths.
+        </p>
+        <br>
+    </div>
+
+    <!-- All associated JavaScript files used to construct the D3.js visualizations. -->
+    <script src='js/d3.min.js'></script>
+    
+    <script src='js/d3-tip.js'></script>
+
+    <script src='js/raw_cases.js'></script>
+
+    <script src='js/raw_deaths.js'></script>
+
+    <script src='js/prop_cases.js'></script>
+
+    <script src='js/prop_deaths.js'></script>
+</body>
+</html>

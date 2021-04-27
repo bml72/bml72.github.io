@@ -16,7 +16,7 @@ var prop_svg = d3.select('#prop_cases')
 // Pull the data from the correct folder. Since the folder containing the data is different,
 // we need to reference the directories above (../ goes to the "code" folder, and the second 
 // ../ goes to the "Final Project" folder.).
-d3.json('../../data/cleaned/json/proportionate_total_cases.json').then(function(mydata){
+d3.json('proportionate_total_cases.json').then(function(mydata){
     mydata.forEach(function(d){
         d.proportionate_total_cases = +d.proportionate_total_cases;
     });

@@ -19,7 +19,7 @@ var svg_deaths = d3.select('#raw_deaths')
 // Pull the data from the correct folder. Since the folder containing the data is different,
 // we need to reference the directories above (../ goes to the "code" folder, and the second 
 // ../ goes to the "Final Project" folder.).
-d3.json('../../data/cleaned/json/raw_total_cases_and_deaths.json').then(function(mydata){
+d3.json('raw_total_cases_and_deaths.json').then(function(mydata){
     mydata.forEach(function(d){
         d.total_deaths = +d.total_deaths;
     });

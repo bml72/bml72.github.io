@@ -162,7 +162,7 @@ continents.forEach(function(continent, i){
 });
 
 // Reading in and cleaning the data.
-d3.json("../../data/cleaned/json/total_vaccinations_march.json").then(function(myData){
+d3.json("total_vaccinations_march.json").then(function(myData){
     formattedData = myData.map(function(date2){
         return date2['countries'].filter(function(country){
             var dataExists = (country.total_vaccinations && country.people_fully_vaccinated);

@@ -2,11 +2,11 @@
 var margin = {left: 80, right: 50, top: 50, bottom: 125};
 
 // Set the width and height of the visualization.
-var width = 850,
+var width = 250,
     height = 300;
 
-// Create the variable for the SVG and reference the average_daily_vacc_progress div when creating it.
-var average_vacc_svg = d3.select('#average_daily_vaccination_progress')
+// Create the variable for the SVG and reference the prop_cases div when creating it.
+var prop_svg = d3.select('#prop_cases')
     .append('svg')
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom)
@@ -16,9 +16,9 @@ var average_vacc_svg = d3.select('#average_daily_vaccination_progress')
 // Pull the data from the correct folder. Since the folder containing the data is different,
 // we need to reference the directories above (../ goes to the "code" folder, and the second 
 // ../ goes to the "Final Project" folder.).
-d3.json('average_daily_vaccination_progress.json').then(function(mydata){
+d3.json('../data/proportionate_total_cases.json').then(function(mydata){
     mydata.forEach(function(d){
-        d.prop_daily_vaccinations = +d.prop_daily_vaccinations;
+        d.proportionate_total_cases = +d.proportionate_total_cases;
     });
 
     // Create the x-axis and define the ticks.
@@ -30,7 +30,7 @@ d3.json('average_daily_vaccination_progress.json').then(function(mydata){
 
     // Create the y-axis and define the ticks.
     var y = d3.scaleLinear()
-        .domain([0, d3.max(mydata, function(d){ return d.prop_daily_vaccinations; }) + 0.02])
+        .domain([0, d3.max(mydata, function(d){ return d.proportionate_total_cases; }) + 0.15])
         .range([height, 0]);
     
     // Create an x-axis call to define where to apply the x-axis.
@@ -42,7 +42,7 @@ d3.json('average_daily_vaccination_progress.json').then(function(mydata){
         .tickFormat(function(d, i){ return d3.format(',')(d) });
 
     // Taking care of the x-axis.
-    average_vacc_svg.append('g')
+    prop_svg.append('g')
         .attr('class', 'x-axis')
         .attr('transform', 'translate(0, ' + height + ')')
         .call(xAxisCall)
@@ -53,7 +53,7 @@ d3.json('average_daily_vaccination_progress.json').then(function(mydata){
                 .attr('transform', 'rotate(-40)');
     
     // Taking care of the x-axis text.
-    average_vacc_svg.append('text')
+    prop_svg.append('text')
         .attr('x', width / 2)
         .attr('y', height + 90)
         .attr('font-size', '20px')
@@ -62,27 +62,27 @@ d3.json('average_daily_vaccination_progress.json').then(function(mydata){
         .style('font', '15.5px times');
 
     // Taking care of the y-axis.
-    average_vacc_svg.append('g')
+    prop_svg.append('g')
         .attr('class', 'y-axis')
         .call(yAxisCall)
 
     // Taking care of the y-axis text.
-    average_vacc_svg.append('text')
+    prop_svg.append('text')
         .attr('x', -(height / 2))
-        .attr('y', -60)
+        .attr('y', -70)
         .attr('font-size', '20px')
         .attr('text-anchor', 'middle')
         .attr('transform', 'rotate(-90)')
-        .text('Percentage of Population Vaccinated Daily (%)')
+        .text('Proportionate Total Cases (% of Pop)')
         .style('font', '15.5px times');
     
     // Taking care of the title text.
-    average_vacc_svg.append('text')
+    prop_svg.append('text')
         .attr('x', width / 2)
         .attr('y', -10)
         .attr('font-size', '20px')
         .attr('text-anchor', 'middle')
-        .text('Top 30 Countries - Percentage of Population Vaccinated Daily')
+        .text('Top Ten Countries by Proportionate Total Cases')
         .style('font', '15.5px times');
 
     // Assigning the tooltip and specifying what to display when a bar is hovered over.
@@ -90,23 +90,21 @@ d3.json('average_daily_vaccination_progress.json').then(function(mydata){
         .html(function(d){
             var text = "Country: <span style='color: #66C0C6'>" + d.country + '</span><br>';
                 text += "Population: <span style='color: #FFF74A; text-transform: capitalize'>" + d3.format(',')(d.population) + '</span><br>';
-                text += "Total Vaccinations: <span style='color: #FFF74A; text-transform: capitalize'>" + d3.format(',')(d.total_vaccinations) + '</span><br>';
-                text += "People Fully Vaccinated: <span style='color: #FFF74A; text-transform: capitalize'>" + d3.format(',')(d.people_fully_vaccinated) + '</span><br>';
-                text += "Percentage of Population Vaccinated Daily: <span style='color: #FFF74A; text-transform: capitalize'>" + d3.format(',%')(d.prop_daily_vaccinations) + '</span><br>';
+                text += "Total Cases (% of Pop): <span style='color: #FFF74A; text-transform: capitalize'>" + d3.format(',%')(d.proportionate_total_cases) + '</span><br>';
             return text;
         });
     
     // Call the previously-defined tip variable to the SVG.
-    average_vacc_svg.call(tip);
+    prop_svg.call(tip);
 
     // Create the "bars" in the histogram. ".on" defines what to highlight the bars with when the mouse hovers over them.
-    var rects = average_vacc_svg.selectAll('rect')
+    var rects = prop_svg.selectAll('rect')
         .data(mydata)
             .enter().append('rect')
-                .attr('y', function(d, i){ return y(d.prop_daily_vaccinations); })
+                .attr('y', function(d, i){ return y(d.proportionate_total_cases); })
                 .attr('x', function(d, i){ return x(d.country); })
                 .attr('width', x.bandwidth)
-                .attr('height', function(d, i){ return height - y(d.prop_daily_vaccinations); })
+                .attr('height', function(d, i){ return height - y(d.proportionate_total_cases); })
                 .attr('fill', '#3EA199')
             .on('mouseover', function(d){
                 tip.show(d);

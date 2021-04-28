@@ -88,11 +88,11 @@ d3.json('../data/average_daily_vaccination_progress.json').then(function(mydata)
     // Assigning the tooltip and specifying what to display when a bar is hovered over.
     var tip = d3.tip().attr('class', 'd3-tip')
         .html(function(d){
-            var text = "Country: <span style='color: #66C0C6'>" + d.country + '</span><br>';
-                text += "Population: <span style='color: #FFF74A; text-transform: capitalize'>" + d3.format(',')(d.population) + '</span><br>';
-                text += "Total Vaccinations: <span style='color: #FFF74A; text-transform: capitalize'>" + d3.format(',')(d.total_vaccinations) + '</span><br>';
-                text += "People Fully Vaccinated: <span style='color: #FFF74A; text-transform: capitalize'>" + d3.format(',')(d.people_fully_vaccinated) + '</span><br>';
-                text += "Percentage of Population Vaccinated Daily: <span style='color: #FFF74A; text-transform: capitalize'>" + d3.format(',%')(d.prop_daily_vaccinations) + '</span><br>';
+            var text = "Country: <span style='color: #ff4e4e'>" + d.country + '</span><br>';
+                text += "Population: <span style='color: #fb8c00; text-transform: capitalize'>" + d3.format(',')(d.population) + '</span><br>';
+                text += "Total Vaccinations: <span style='color: #fb8c00; text-transform: capitalize'>" + d3.format(',')(d.total_vaccinations) + '</span><br>';
+                text += "People Fully Vaccinated: <span style='color: #fb8c00; text-transform: capitalize'>" + d3.format(',')(d.people_fully_vaccinated) + '</span><br>';
+                text += "Percentage of Population Vaccinated Daily: <span style='color: #fb8c00; text-transform: capitalize'>" + d3.format(',%')(d.prop_daily_vaccinations) + '</span><br>';
             return text;
         });
     
@@ -107,14 +107,14 @@ d3.json('../data/average_daily_vaccination_progress.json').then(function(mydata)
                 .attr('x', function(d, i){ return x(d.country); })
                 .attr('width', x.bandwidth)
                 .attr('height', function(d, i){ return height - y(d.prop_daily_vaccinations); })
-                .attr('fill', '#3EA199')
+                .attr('fill', '#7d1919')
             .on('mouseover', function(d){
                 tip.show(d);
                 tempColor = this.style.fill;
                 d3.select(this)
                     .transition()
                     .style('opacity', 0.5)
-                    .style('fill', '#FFF74A')
+                    .style('fill', '#fb8c00')
             })
             .on('mouseout', function(d){
                 tip.hide(d);
